@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: mart_rolling_avg_cases
+    description: "3-month rolling average of new cases by state (monthly CDC data)"
+    columns:
+      - name: state_fips
+        description: "2-digit state FIPS code"
+        tests:
+          - not_null
+      - name: case_month
+        tests:
+          - not_null
+      - name: monthly_cases
+        tests:
+          - not_null
+      - name: rolling_3mo_avg_cases
+        tests:
+          - not_null
+
+  - name: mart_case_fatality_rate
+    description: "Case fatality rate (deaths / cases) by state and month"
+    columns:
+      - name: state_fips
+        tests:
+          - not_null
+      - name: case_month
+        tests:
+          - not_null
+      - name: case_fatality_rate_pct
+        description: "Percentage — expect values between 0 and 100"
+        tests:
+          - not_null
+
+  - name: mart_cases_per_100k
+    description: "Population-normalized case rate by county and month"
+    columns:
+      - name: county_fips
+        tests:
+          - not_null
+      - name: case_month
+        tests:
+          - not_null
+      - name: cases_per_100k
+        tests:
+          - not_null
+
+  - name: mart_vaccination_vs_cases
+    description: "Vaccination coverage vs cumulative case rate by county"
+    columns:
+      - name: county_fips
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_data_freshness
+    description: "Pipeline health — when each source was last loaded"
+    columns:
+      - name: source_table
+        tests:
+          - not_null
+          - unique
+      - name: freshness_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["Fresh", "Recent", "Stale", "Very Stale"]

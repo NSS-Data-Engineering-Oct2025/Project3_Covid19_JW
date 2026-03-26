@@ -1,0 +1,64 @@
+version: 2
+
+sources:
+  - name: raw
+    database: COVID_DB
+    schema: RAW
+    description: "Landing zone — raw data loaded by Python ingestion scripts"
+
+    tables:
+      - name: raw_covid_cases
+        description: "CDC COVID-19 case-level data with geography (SODA endpoint n8mc-b4w4)"
+        columns:
+          - name: CASE_MONTH
+            description: "Month the case was reported (YYYY-MM format)"
+          - name: STATE_FIPS_CODE
+            description: "2-digit state FIPS code"
+          - name: COUNTY_FIPS_CODE
+            description: "3-digit county FIPS code"
+          - name: AGE_GROUP
+            description: "Age bracket of the case"
+          - name: SEX
+            description: "Sex of the patient"
+          - name: RACE
+            description: "Race of the patient"
+          - name: ETHNICITY
+            description: "Ethnicity of the patient"
+          - name: OUTCOME
+            description: "Case outcome (e.g. Death, Hospitalization, Unknown)"
+          - name: HOSPITALIZATION
+            description: "Hospitalization status"
+
+      - name: raw_vaccinations
+        description: "CDC COVID-19 vaccinations by county (SODA endpoint 8xkx-amqh)"
+        columns:
+          - name: FIPS
+            description: "5-digit county FIPS code"
+          - name: RECIP_COUNTY
+            description: "County name"
+          - name: RECIP_STATE
+            description: "State abbreviation"
+          - name: DATE
+            description: "Date of record"
+          - name: ADMINISTERED_DOSE1_RECIP
+            description: "Cumulative recipients of at least 1 dose"
+          - name: SERIES_COMPLETE_YES
+            description: "Cumulative recipients of completed primary series"
+          - name: BOOSTER_DOSES
+            description: "Cumulative booster doses administered"
+          - name: CENSUS2019
+            description: "2019 Census population used as denominator"
+
+      - name: raw_population
+        description: "US Census 2023 population estimates by county (PEP API)"
+        columns:
+          - name: FIPS
+            description: "5-digit county FIPS code (STATE + COUNTY concatenated)"
+          - name: NAME
+            description: "County name with state"
+          - name: POP
+            description: "Population estimate"
+          - name: STATE
+            description: "2-digit state FIPS"
+          - name: COUNTY
+            description: "3-digit county FIPS"
