@@ -1,0 +1,40 @@
+==================== 2026-03-28T14:25:14.097148Z | 019d34d5-b56d-70c2-a58f-3643d3813914 ====================
+14:25:14.097633 [info ]: Installing dbt project and profile setup
+14:25:14.109446 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+14:25:14.109705 [info ]: Success Project created successfully!
+14:25:14.109756 [info ]: Info Project name: jaffle_shop
+14:25:14.109771 [info ]: Info Project directory: jaffle_shop
+14:25:14.109816 [info ]: Info Setting up your profile...
+14:25:14.110441 [info ]: Loading ~/.dbt/profiles.yml
+14:25:14.110999 [info ]: Info Creating new profile...
+14:25:21.187717 [info ]: Found dbt_cloud.yml configuration
+14:25:21.187816 [info ]: Found active project: Analytics (ID: 70471823554975)
+14:30:55.030476 [warn ]: dbt1001: Failed to fetch cloud config: Failed to fetch user credentials: error in response: status code 401 Unauthorized
+14:30:55.034410 [info ]: No cloud config found for this adapter/project
+14:31:23.122781 [info ]: Success Profile written to /Users/Pierrot/.dbt/profiles.yml
+14:31:23.124406 [info ]: Validating profile inputs, adapters, and connection
+
+14:31:23.125470 [info ]: dbt-fusion 2.0.0-preview.120
+14:31:23.130776 [info ]: Started loading project
+14:31:23.169661 [info ]: Loading ~/.dbt/profiles.yml
+14:31:23.181166 [info ]: Finished loading project [  0.05s]
+14:31:23.182947 [info ]: Started debugging
+14:31:23.183024 [info ]: Debugging profile: dev
+14:31:23.183060 [info ]: Debugging dbt version: 2.0.0-preview.120
+14:31:23.183077 [info ]: Debugging platform: macos aarch64 (unix)
+14:31:23.183420 [info ]: Debugging adapter type: snowflake (remote)
+14:31:23.201158 [info ]: Debugging dependencies:
+  git: OK
+14:31:23.204498 [info ]: Debugging connection:
+  "account": "wq",
+  "user": "\\",
+  "database": "w",
+  "warehouse": "w",
+  "schema": "w",
+  "role": "w"
+14:32:40.793225 [info ]: Finished debugging [  1m17s]
+14:32:40.795673 [error]: dbt1011: [Snowflake] 261004 (08004): failed to auth for unknown reason. HTTP: 404, URL: https://wq.snowflakecomputing.com:443/session/v1/login-request?databaseName=w&requestId=1737ec51-449c-4f13-4425-f50506ab50bb&request_guid=eadcc0f6-e4e2-4161-454c-10bdfb35e8b8&roleName=w&schemaName=w&warehouse=w
+14:32:41.270631 [info ]: New version available 2.0.0-preview.164 (run `dbt system update`)
+14:32:41.511052 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 warning and 1 error for target 'dev' [7m 27s]
