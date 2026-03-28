@@ -1,0 +1,1 @@
+# Declares RAW tables as dbt sources (RAW_COVID_CASES, RAW_VACCINATIONS, RAW_POPULATION)

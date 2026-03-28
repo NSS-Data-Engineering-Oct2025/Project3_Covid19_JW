@@ -1,0 +1,1 @@
+-- Metric: 3-month rolling average of new cases by state
