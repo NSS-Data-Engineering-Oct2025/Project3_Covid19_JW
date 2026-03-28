@@ -1,0 +1,1 @@
+-- Metric: Vaccination coverage vs cumulative case rate by county

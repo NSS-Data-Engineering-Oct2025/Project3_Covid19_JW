@@ -1,0 +1,1 @@
+-- Macro: ensures dbt uses exact schema names (STAGING, INTERMEDIATE, MARTS)

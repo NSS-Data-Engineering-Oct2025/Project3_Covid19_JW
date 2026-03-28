@@ -1,0 +1,1 @@
+-- Cleans and types raw CDC case data (1:1 with RAW_COVID_CASES)

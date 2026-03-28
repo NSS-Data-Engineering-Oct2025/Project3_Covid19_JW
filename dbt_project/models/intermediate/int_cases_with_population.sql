@@ -1,0 +1,1 @@
+-- Joins stg_covid_cases + stg_population on county FIPS code

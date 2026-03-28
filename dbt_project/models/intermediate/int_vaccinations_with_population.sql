@@ -1,0 +1,1 @@
+-- Joins stg_vaccinations + stg_population on county FIPS code

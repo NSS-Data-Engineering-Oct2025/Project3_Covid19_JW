@@ -1,0 +1,1 @@
+-- Cleans and types raw CDC vaccination data (1:1 with RAW_VACCINATIONS)

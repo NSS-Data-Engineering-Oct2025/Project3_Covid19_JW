@@ -1,0 +1,1 @@
+-- Metric: Case fatality rate (deaths / cases) by state and month
