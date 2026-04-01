@@ -1,6 +1,6 @@
 -- Mart: Vaccination coverage vs case rate by county
 -- Joins the latest vaccination snapshot with cumulative case counts.
--- Enables correlation analysis: do more-vaccinated counties show fewer cases?
+-- Includes robust per-100k metrics and filters unknown counties.
 
 with cases_cumulative as (
     select
@@ -12,8 +12,15 @@ with cases_cumulative as (
     group by 1
 ),
 
-vaccinations as (
-    select * from {{ ref('int_vaccinations_with_population') }}
+latest_vaccinations as (
+    select *
+    from (
+        select *,
+               row_number() over (partition by county_fips order by latest_vaccination_date desc) as rn
+        from {{ ref('int_vaccinations_with_population') }}
+    ) t
+    where rn = 1
+      and county_fips not in ('00000', 'UNK')
 )
 
 select
@@ -23,14 +30,15 @@ select
     v.latest_vaccination_date,
     v.pct_series_complete,
     v.pct_boosted,
+    v.series_complete_cumulative,
+    v.booster_cumulative,
     c.total_cases,
     c.total_deaths,
     c.population,
-    round(
-        c.total_cases * 100000.0 / nullif(c.population, 0),
-        2
-    ) as cumulative_cases_per_100k
+    round(c.total_cases * 100000.0 / nullif(c.population, 0), 2) as cumulative_cases_per_100k,
+    round(c.total_deaths * 100000.0 / nullif(c.population, 0), 2) as deaths_per_100k
 
-from vaccinations v
+from latest_vaccinations v
 left join cases_cumulative c on v.county_fips = c.county_fips
+
 order by v.state_abbrev, v.county_fips

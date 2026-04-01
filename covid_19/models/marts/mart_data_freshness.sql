@@ -1,29 +1,28 @@
 -- Mart: Data freshness report by source
 -- Shows when each RAW table was last loaded and how stale it is.
--- Critical for operational trust and dashboard warnings.
 
 with freshness as (
     select
-        'raw_covid_cases'   as source_table,
+        'stg_covid_cases' as source_table,
         'CDC SODA n8mc-b4w4' as source_name,
-        max(_loaded_at)     as last_loaded_at
-    from {{ source('raw', 'raw_covid_cases') }}
+        max(_loaded_at) as last_loaded_at
+    from {{ ref('stg_covid_cases') }}
 
     union all
 
     select
-        'raw_vaccinations'   as source_table,
+        'stg_vaccinations' as source_table,
         'CDC SODA 8xkx-amqh' as source_name,
-        max(_loaded_at)      as last_loaded_at
-    from {{ source('raw', 'raw_vaccinations') }}
+        max(_loaded_at) as last_loaded_at
+    from {{ ref('stg_vaccinations') }}
 
     union all
 
     select
-        'raw_population'        as source_table,
-        'US Census PEP 2023'    as source_name,
-        max(_loaded_at)         as last_loaded_at
-    from {{ source('raw', 'raw_population') }}
+        'stg_population' as source_table,
+        'US Census PEP 2023' as source_name,
+        max(_loaded_at) as last_loaded_at
+    from {{ ref('stg_population') }}
 )
 
 select

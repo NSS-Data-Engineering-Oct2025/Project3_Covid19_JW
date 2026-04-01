@@ -22,7 +22,9 @@ with vaccinations as (
 ),
 
 latest as (
-    select * from vaccinations where rn = 1
+    select * 
+    from vaccinations 
+    where rn = 1
 ),
 
 population as (
@@ -57,3 +59,4 @@ joined as (
 )
 
 select * from joined
+order by state_abbrev, county_fips

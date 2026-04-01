@@ -7,9 +7,9 @@ with cases as (
         county_fips,
         state_fips,
         case_month,
-        count(*)        as total_cases,
-        sum(is_death)   as total_deaths,
-        sum(is_hospitalized) as total_hospitalizations
+        count(*)              as total_cases,
+        sum(is_death)         as total_deaths,
+        sum(is_hospitalized)  as total_hospitalizations
     from {{ ref('stg_covid_cases') }}
     group by 1, 2, 3
 ),
@@ -38,3 +38,4 @@ joined as (
 )
 
 select * from joined
+order by state_fips, county_fips, case_month
