@@ -16,11 +16,8 @@ with open(profile_path, "r") as f:
 profile_name = "covid_19"  # change if your profile has a different name
 target_name = "dev"
 
-try:
-    target = profiles[profile_name]["outputs"][target_name]
-except KeyError:
-    raise KeyError(
-        f"Profile '{profile_name}' or target '{target_name}' not found in {profile_path}")
+# Direct access (will raise KeyError if missing)
+target = profiles[profile_name]["outputs"][target_name]
 
 # Extract connection info
 user = target["user"]
@@ -55,5 +52,5 @@ limit = int(limit) if limit else 10
 # Query and print table
 # -----------------------------
 query = f"SELECT * FROM {table_name} LIMIT {limit}"
-df = pd.read_sql(query, conn)
-print(tabulate(df, headers='keys', tablefmt='grid'))
+tables_df = pd.read_sql(query, conn)
+print(tabulate(tables_df, headers='keys', tablefmt='grid'))
