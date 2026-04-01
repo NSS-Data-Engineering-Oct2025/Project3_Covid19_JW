@@ -1,6 +1,6 @@
 -- Staging: CDC COVID-19 cases
 -- Light cleaning only — no business logic here.
--- One row per case record from the CDC SODA API.
+-- Column names mapped from actual RAW_COVID_CASES schema (verified 2026-03-31).
 
 with source as (
     select * from {{ source('raw', 'raw_covid_cases') }}
@@ -15,19 +15,28 @@ cleaned as (
         -- Normalize month to a proper date (first day of the month)
         try_to_date(case_month, 'YYYY-MM')                               as case_month,
 
+        -- Geographic fields
+        nullif(trim(res_state), '')   as res_state,
+        nullif(trim(res_county), '')  as res_county,
+
         -- Demographic fields
-        nullif(trim(age_group), '')    as age_group,
-        nullif(trim(sex), '')          as sex,
-        nullif(trim(race), '')         as race,
-        nullif(trim(ethnicity), '')    as ethnicity,
+        nullif(trim(age_group), '')   as age_group,
+        nullif(trim(sex), '')         as sex,
+        nullif(trim(race), '')        as race,
+        nullif(trim(ethnicity), '')   as ethnicity,
 
-        -- Outcome fields
-        nullif(trim(outcome), '')         as outcome,
-        nullif(trim(hospitalization), '') as hospitalization,
+        -- Clinical status fields
+        nullif(trim(current_status), '')             as current_status,
+        nullif(trim(symptom_status), '')             as symptom_status,
+        nullif(trim(hosp_yn), '')                    as hosp_yn,
+        nullif(trim(icu_yn), '')                     as icu_yn,
+        nullif(trim(death_yn), '')                   as death_yn,
+        nullif(trim(underlying_conditions_yn), '')   as underlying_conditions_yn,
 
-        -- Derived flags for easier aggregation
-        case when lower(outcome) = 'death' then 1 else 0 end         as is_death,
-        case when lower(hospitalization) = 'yes' then 1 else 0 end   as is_hospitalized,
+        -- Derived binary flags for easier aggregation in intermediate/marts
+        case when upper(death_yn) = 'YES' then 1 else 0 end   as is_death,
+        case when upper(hosp_yn)  = 'YES' then 1 else 0 end   as is_hospitalized,
+        case when upper(icu_yn)   = 'YES' then 1 else 0 end   as is_icu,
 
         current_timestamp() as _loaded_at
 
