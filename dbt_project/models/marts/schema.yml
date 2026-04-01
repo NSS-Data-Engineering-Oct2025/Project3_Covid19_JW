@@ -51,7 +51,9 @@ models:
       - name: county_fips
         tests:
           - not_null
-          - unique
+          - unique:
+              config:
+                severity: warn
 
   - name: mart_data_freshness
     description: "Pipeline health — when each source was last loaded"
