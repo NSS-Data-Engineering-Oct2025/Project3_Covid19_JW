@@ -1,0 +1,149 @@
+==================== 2026-03-31T23:34:36.653721Z | 019d463f-c161-77f2-ae57-483b41f11267 ====================
+23:34:36.656699 [info ]: Installing dbt project and profile setup
+23:34:36.683398 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:34:36.684729 [info ]: Success Project created successfully!
+23:34:36.684791 [info ]: Info Project name: jaffle_shop
+23:34:36.684807 [info ]: Info Project directory: jaffle_shop
+23:34:36.684853 [info ]: Info Setting up your profile...
+23:34:36.685703 [info ]: Loading ~/.dbt/profiles.yml
+23:34:36.691887 [info ]: Profile 'jaffle_shop' already exists. You can choose how to proceed.
+23:34:45.977271 [info ]: Info Creating new profile...
+23:34:50.926423 [info ]: Found dbt_cloud.yml configuration
+23:34:50.926500 [info ]: Found active project: Analytics (ID: 70471823554975)
+23:42:54.307644 [error]: dbt1001: Failed to get project selection: IO error: read interrupted
+23:42:54.716373 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [8m 18s]
+==================== 2026-03-31T23:45:22.791658Z | 019d4649-9d5d-7730-98c1-50dc2d429fbf ====================
+23:45:22.794560 [info ]: Installing dbt project and profile setup
+23:45:22.811648 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:45:22.812825 [info ]: Success Project created successfully!
+23:45:22.812879 [info ]: Info Project name: jaffle_shop
+23:45:22.812894 [info ]: Info Project directory: jaffle_shop
+23:45:22.812938 [info ]: Info Setting up your profile...
+23:45:22.814182 [info ]: Loading ~/.dbt/profiles.yml
+23:45:22.825389 [info ]: Profile 'jaffle_shop' already exists. You can choose how to proceed.
+23:45:33.641474 [info ]: Info Creating new profile...
+23:45:34.654616 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+23:51:52.705191 [error]: dbt1001: Failed to get input for database: IO error: read interrupted
+23:51:52.979176 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [6m 30s]
+==================== 2026-03-31T23:53:18.926452Z | 019d4650-e141-7030-a6f2-3bfd02832501 ====================
+23:53:18.929413 [info ]: Installing dbt project and profile setup
+23:53:18.944604 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_1' instead
+23:53:18.955774 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:53:18.956811 [info ]: Success Project created successfully!
+23:53:18.956833 [info ]: Info Project name: jaffle_shop_1
+23:53:18.956847 [info ]: Info Project directory: jaffle_shop_1
+23:53:18.957052 [info ]: Info Setting up your profile...
+23:53:18.958021 [info ]: Loading ~/.dbt/profiles.yml
+23:53:18.961059 [info ]: Info Creating new profile...
+23:53:32.524390 [error]: dbt1001: Failed to get adapter selection: IO error: read interrupted
+23:53:32.565084 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [13.6s]
+==================== 2026-03-31T23:54:03.289619Z | 019d4651-8e98-7631-9e98-c12ce6a37139 ====================
+23:54:03.289675 [info ]: Installing dbt project and profile setup
+23:54:03.294454 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_1' instead
+23:54:03.300767 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:54:03.301474 [info ]: Success Project created successfully!
+23:54:03.301497 [info ]: Info Project name: jaffle_shop_1
+23:54:03.301511 [info ]: Info Project directory: jaffle_shop_1
+23:54:03.301799 [info ]: Info Setting up your profile...
+23:54:03.302143 [info ]: Loading ~/.dbt/profiles.yml
+23:54:03.303049 [info ]: Info Creating new profile...
+23:54:44.910228 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+00:03:22.288655 [error]: dbt1001: Failed to get input for account: IO error: read interrupted
+00:03:22.430568 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [9m 19s]
+==================== 2026-04-01T00:04:35.691634Z | 019d465b-34ea-75d0-a3d2-c8db3209cfb5 ====================
+00:04:35.691697 [info ]: Installing dbt project and profile setup
+00:04:35.700817 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+00:04:35.702348 [info ]: Success Project created successfully!
+00:04:35.702673 [info ]: Info Project name: jaffle_shop
+00:04:35.702691 [info ]: Info Project directory: jaffle_shop
+00:04:35.702980 [info ]: Info Setting up your profile...
+00:04:35.703760 [info ]: Loading ~/.dbt/profiles.yml
+00:04:35.712082 [info ]: Profile 'jaffle_shop' already exists. You can choose how to proceed.
+00:04:44.507912 [info ]: Info Creating new profile...
+00:04:45.490968 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+00:07:07.937844 [info ]: Info Backup created at /Users/Pierrot/.dbt/profiles.yml.bkp
+00:07:07.939529 [info ]: Success Profile written to /Users/Pierrot/.dbt/profiles.yml
+00:07:07.940658 [info ]: Validating profile inputs, adapters, and connection
+
+00:07:07.941831 [info ]: dbt-fusion 2.0.0-preview.120
+00:07:07.944129 [info ]: Started loading project
+00:07:07.945374 [info ]: Loading ~/.dbt/profiles.yml
+00:07:07.951682 [info ]: Finished loading project [  0.01s]
+00:07:07.953079 [info ]: Started debugging
+00:07:07.953129 [info ]: Debugging profile: dev
+00:07:07.953167 [info ]: Debugging dbt version: 2.0.0-preview.120
+00:07:07.953185 [info ]: Debugging platform: macos aarch64 (unix)
+00:07:07.953539 [info ]: Debugging adapter type: snowflake (remote)
+00:07:07.975594 [info ]: Debugging dependencies:
+  git: OK
+00:07:07.978533 [info ]: Debugging connection:
+  "account": "NFSQMYV-CE67328",
+  "user": "JAY_LHOMME",
+  "database": "COVID_DB",
+  "warehouse": "COMPUTE_WH",
+  "schema": "      schema: PUBLIC              # or any schema you want",
+  "role": "SYSADMIN "
+00:07:08.982608 [info ]: Finished debugging [  1.03s]
+00:07:08.984063 [error]: dbt1011: [Snowflake] 390189 (08004): Role 'SYSADMIN ' specified in the connect string does not exist or not authorized. Contact your local system administrator, or attempt to login with another role, e.g. PUBLIC.
+00:07:09.848482 [info ]: New version available 2.0.0-preview.164 (run `dbt system update`)
+00:07:09.974278 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [2m 34s]
+==================== 2026-04-01T00:14:09.035674Z | 019d4663-f47a-7e53-bb19-4a95feb8e478 ====================
+00:14:09.038879 [info ]: Installing dbt project and profile setup
+00:14:09.061768 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+00:14:09.063709 [info ]: Success Project created successfully!
+00:14:09.064185 [info ]: Info Project name: jaffle_shop
+00:14:09.064212 [info ]: Info Project directory: jaffle_shop
+00:14:09.064558 [info ]: Info Setting up your profile...
+00:14:09.065403 [info ]: Loading ~/.dbt/profiles.yml
+00:14:09.068756 [info ]: Info Creating new profile...
+00:14:22.833896 [error]: dbt1001: Failed to get adapter selection: IO error: read interrupted
+00:14:22.873766 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [13.8s]
+==================== 2026-04-01T00:15:39.927328Z | 019d4665-5788-7050-8dbd-d2aec8c6ff54 ====================
+00:15:39.930706 [info ]: Installing dbt project and profile setup
+00:15:39.952395 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+00:15:39.954017 [info ]: Success Project created successfully!
+00:15:39.954237 [info ]: Info Project name: jaffle_shop
+00:15:39.954257 [info ]: Info Project directory: jaffle_shop
+00:15:39.954451 [info ]: Info Setting up your profile...
+00:15:39.955685 [info ]: Loading ~/.dbt/profiles.yml
+00:15:39.958142 [info ]: Info Creating new profile...
+00:15:56.523974 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+00:18:19.844821 [info ]: Success Profile written to /Users/Pierrot/.dbt/profiles.yml
+00:18:19.846131 [info ]: Validating profile inputs, adapters, and connection
+
+00:18:19.847236 [info ]: dbt-fusion 2.0.0-preview.120
+00:18:19.850411 [info ]: Started loading project
+00:18:19.874125 [info ]: Loading ~/.dbt/profiles.yml
+00:18:19.884339 [info ]: Finished loading project [  0.03s]
+00:18:19.885650 [info ]: Started debugging
+00:18:19.885713 [info ]: Debugging profile: dev
+00:18:19.885745 [info ]: Debugging dbt version: 2.0.0-preview.120
+00:18:19.885760 [info ]: Debugging platform: macos aarch64 (unix)
+00:18:19.886194 [info ]: Debugging adapter type: snowflake (remote)
+00:18:19.902995 [info ]: Debugging dependencies:
+  git: OK
+00:18:19.905291 [info ]: Debugging connection:
+  "account": "NFSQMYV-CE67328",
+  "user": "      user: JAY_LHOMME            # your Snowflake login",
+  "database": "      database: COVID_DB      # replace with your DB name",
+  "warehouse": "      warehouse: COMPUTE_WH     # replace with your warehouse name",
+  "schema": "      schema: PUBLIC            # or any schema you want",
+  "role": "      role: SYSADMIN           # from your Snowflake account"
+00:18:20.607369 [info ]: Finished debugging [  0.72s]
+00:18:20.608867 [error]: dbt1011: [Snowflake] 390100 (08004): Incorrect username or password was specified.
+00:18:21.142386 [info ]: New version available 2.0.0-preview.164 (run `dbt system update`)
+00:18:21.308692 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error for target 'dev' [2m 41s]

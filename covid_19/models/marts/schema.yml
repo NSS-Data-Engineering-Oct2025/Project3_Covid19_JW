@@ -64,4 +64,5 @@ models:
         tests:
           - not_null
           - accepted_values:
-              values: ["Fresh", "Recent", "Stale", "Very Stale"]
+              arguments:
+                values: ["Fresh", "Recent", "Stale", "Very Stale"]
