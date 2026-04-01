@@ -1,9 +1,9 @@
 """
 Shared Snowflake loader used by all ingestion scripts.
-Handles connection pooling, COPY INTO, and upsert patterns.
 """
 
 import snowflake.connector
+import snowflake.connector.pandas_tools
 import pandas as pd
 from loguru import logger
 from src.config import snowflake as sf_config
@@ -16,13 +16,10 @@ def get_connection() -> snowflake.connector.SnowflakeConnection:
         password=sf_config.password,
         warehouse=sf_config.warehouse,
         database=sf_config.database,
+        schema=sf_config.raw_schema,
         role=sf_config.role,
         session_parameters={"QUERY_TAG": "covid_pipeline"},
     )
-
-
-def ensure_schema(conn: snowflake.connector.SnowflakeConnection, schema: str) -> None:
-    conn.cursor().execute(f"CREATE SCHEMA IF NOT EXISTS {schema}")
 
 
 def load_dataframe(
@@ -51,13 +48,10 @@ def load_dataframe(
 
     conn = get_connection()
     try:
-        ensure_schema(conn, schema)
-        cur = conn.cursor()
-
         full_table = f"{sf_config.database}.{schema}.{table}"
 
         if if_exists == "replace":
-            cur.execute(f"TRUNCATE TABLE IF EXISTS {full_table}")
+            conn.cursor().execute(f"TRUNCATE TABLE IF EXISTS {full_table}")
 
         success, nchunks, nrows, _ = snowflake.connector.pandas_tools.write_pandas(
             conn=conn,
