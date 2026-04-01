@@ -28,24 +28,29 @@ Census API ────┘
 ## Quick Start
 
 ### 1. Install dependencies
+
 ```powershell
 uv sync
 ```
 
 ### 2. Configure credentials
+
 ```powershell
 Copy-Item .env.example .env
 # Edit .env with your Snowflake password and Census API key
 ```
 
 ### 3. Configure dbt
+
 ```powershell
 Copy-Item dbt_project\profiles.yml.example $HOME\.dbt\profiles.yml
 # Edit ~/.dbt/profiles.yml and set SNOWFLAKE_PASSWORD
 ```
 
 ### 4. Create Snowflake objects
+
 Run in Snowflake worksheet:
+
 ```sql
 CREATE DATABASE IF NOT EXISTS COVID_DB;
 CREATE SCHEMA IF NOT EXISTS COVID_DB.RAW;
@@ -55,6 +60,7 @@ CREATE SCHEMA IF NOT EXISTS COVID_DB.MARTS;
 ```
 
 ### 5. Test ingestion (smoke test — 2 pages only)
+
 ```powershell
 uv run python -m src.ingest_covid_cases
 uv run python -m src.ingest_vaccinations
@@ -62,6 +68,7 @@ uv run python -m src.ingest_population
 ```
 
 ### 6. Run dbt
+
 ```powershell
 cd dbt_project
 dbt debug          # verify connection
@@ -70,6 +77,7 @@ dbt test           # run all tests
 ```
 
 ### 7. Launch dashboard
+
 ```powershell
 streamlit run streamlit/app.py
 ```
@@ -101,7 +109,7 @@ streamlit run streamlit/app.py
 
 ## Project Structure
 
-```
+```bash
 ├── dags/                   Airflow DAG
 ├── src/                    Python ingestion scripts
 ├── dbt_project/            dbt project (models, macros, tests)
