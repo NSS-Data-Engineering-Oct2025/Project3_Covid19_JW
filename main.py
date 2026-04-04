@@ -25,10 +25,10 @@ def run_ingestion() -> dict:
     results = {}
 
     logger.info("Ingesting CDC COVID cases...")
-    results["covid_cases"] = ingest_cases(max_pages=2)
+    results["covid_cases"] = ingest_cases(max_pages=None)  # full load
 
     logger.info("Ingesting CDC vaccinations...")
-    results["vaccinations"] = ingest_vaccinations(max_pages=1)
+    results["vaccinations"] = ingest_vaccinations(max_pages=None)  # full load
 
     logger.info("Ingesting Census population...")
     results["population"] = ingest_population()
