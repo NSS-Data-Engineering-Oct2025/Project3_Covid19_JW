@@ -159,6 +159,8 @@ elif page == "Metrics Deep Dive":
             "Case Fatality Rate by State",
             "Cases per 100k — Top Counties",
             "Booster Adoption Rate by State",
+            "Hospitalization Rate by State ★",
+            "Severity Index — Top Counties ★",
         ],
     )
 
@@ -223,6 +225,64 @@ elif page == "Metrics Deep Dive":
                 color="AVG_PCT_BOOSTED",
                 color_continuous_scale="Blues",
             )
+            st.plotly_chart(fig, width="stretch")
+
+    elif metric == "Hospitalization Rate by State ★":
+        st.markdown(
+            "**Custom metric** — hospitalizations / confirmed cases × 100, by state and month. "
+            "Signals healthcare system burden independently of fatality rate. "
+            "A high hospitalization rate with a low CFR indicates strong ICU care; "
+            "high in both signals a overwhelmed system."
+        )
+        df_hosp = query("""
+            SELECT state_fips, case_month, hospitalization_rate_pct, total_cases
+            FROM COVID_DB.MARTS.MART_HOSPITALIZATION_RATE
+            WHERE hospitalization_rate_pct BETWEEN 0 AND 100
+            ORDER BY case_month
+        """)
+        if not df_hosp.empty:
+            fig = px.line(
+                df_hosp,
+                x="CASE_MONTH",
+                y="HOSPITALIZATION_RATE_PCT",
+                color="STATE_FIPS",
+                title="Hospitalization Rate (%) Over Time by State",
+                labels={
+                    "HOSPITALIZATION_RATE_PCT": "Hospitalization Rate %",
+                    "CASE_MONTH": "Month",
+                },
+            )
+            fig.update_layout(showlegend=False)
+            st.plotly_chart(fig, width="stretch")
+
+    elif metric == "Severity Index — Top Counties ★":
+        st.markdown(
+            "**Custom metric** — composite severity score per county: "
+            "hospitalization rate × 0.4 + ICU rate × 0.4 + case fatality rate × 0.2. "
+            "Combines three clinical indicators into a single ranking to support "
+            "resource allocation decisions by public health officials."
+        )
+        df_sev = query("""
+            SELECT county_fips, county_name, state_fips,
+                   severity_index, hosp_rate_pct, icu_rate_pct, cfr_pct, total_cases
+            FROM COVID_DB.MARTS.MART_SEVERITY_INDEX
+            WHERE total_cases >= 10
+            ORDER BY severity_index DESC
+            LIMIT 30
+        """)
+        if not df_sev.empty:
+            fig = px.bar(
+                df_sev,
+                x="SEVERITY_INDEX",
+                y="COUNTY_NAME",
+                orientation="h",
+                color="SEVERITY_INDEX",
+                color_continuous_scale="OrRd",
+                hover_data=["STATE_FIPS", "HOSP_RATE_PCT", "ICU_RATE_PCT", "CFR_PCT", "TOTAL_CASES"],
+                title="Top 30 Counties by Severity Index",
+                labels={"SEVERITY_INDEX": "Severity Index", "COUNTY_NAME": "County"},
+            )
+            fig.update_layout(yaxis={"categoryorder": "total ascending"})
             st.plotly_chart(fig, width="stretch")
 
 # ── Page: Data Quality ────────────────────────────────────────────────────────
