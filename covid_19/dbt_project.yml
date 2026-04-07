@@ -21,9 +21,3 @@ models:
     marts:
       +schema: MARTS
       +materialized: table
-
-
-seeds:
-  # Builds seeds into '<your_schema_name>_raw'
-  covid_19:
-    +schema: raw

@@ -24,10 +24,17 @@ sources:
             description: "Race of the patient"
           - name: ETHNICITY
             description: "Ethnicity of the patient"
-          - name: OUTCOME
-            description: "Case outcome (e.g. Death, Hospitalization, Unknown)"
-          - name: HOSPITALIZATION
+          - name: CURRENT_STATUS
+            description: "Case status (Laboratory-confirmed case, Probable case)"
+          - name: SYMPTOM_STATUS
+            description: "Symptomatic, Asymptomatic, or Unknown"
+          - name: HOSP_YN
             description: "Hospitalization status"
+          - name: ICU_YN
+            description: "ICU admission — Yes / No / Unknown / Missing"
+          - name: DEATH_YN
+            description: "Death — Yes / No / Unknown / Missing"
+
 
       - name: raw_vaccinations
         description: "CDC COVID-19 vaccinations by county (SODA endpoint 8xkx-amqh)"

@@ -40,7 +40,7 @@ key_columns_map = {
 
 # Query the table
 query = f"SELECT * FROM {table_name} LIMIT {limit}"
-# URL-encode the password for special characters
+# # URL-encode the password for special characters
 encoded_password = quote_plus(password)
 engine = create_engine(
     f"snowflake://{user}:{encoded_password}@{account}/{database}/{schema}?warehouse={warehouse}&role={role}"
