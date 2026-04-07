@@ -1,5 +1,6 @@
 name: covid_19
-
+version: "1.0.0"
+config-version: 2
 profile: covid_19
 
 model-paths: ["models"]
@@ -7,7 +8,6 @@ test-paths: ["tests"]
 macro-paths: ["macros"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
-seed-paths: ["seeds"]
 
 models:
   covid_19:

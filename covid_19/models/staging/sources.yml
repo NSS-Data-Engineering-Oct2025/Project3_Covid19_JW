@@ -34,6 +34,8 @@ sources:
             description: "ICU admission — Yes / No / Unknown / Missing"
           - name: DEATH_YN
             description: "Death — Yes / No / Unknown / Missing"
+          - name: UNDERLYING_CONDITIONS_YN
+            description: "Presence of underlying conditions"
 
 
       - name: raw_vaccinations

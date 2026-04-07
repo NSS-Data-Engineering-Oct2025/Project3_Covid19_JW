@@ -53,6 +53,39 @@ models:
           - not_null
           - unique
 
+  - name: mart_hospitalization_rate
+    description: >
+      Custom metric: percentage of confirmed cases that required hospitalization,
+      by state and month. Signals healthcare system burden independent of fatality rate.
+    columns:
+      - name: state_fips
+        tests:
+          - not_null
+      - name: case_month
+        tests:
+          - not_null
+      - name: total_cases
+        tests:
+          - not_null
+      - name: hospitalization_rate_pct
+        description: "Expect values between 0 and 100"
+        tests:
+          - not_null
+
+  - name: mart_severity_index
+    description: >
+      Custom metric: composite severity score per county combining hospitalization rate (40%),
+      ICU rate (40%), and case fatality rate (20%). Ranks counties by overall disease severity
+      to support resource allocation decisions.
+    columns:
+      - name: county_fips
+        tests:
+          - not_null
+          - unique
+      - name: severity_index
+        tests:
+          - not_null
+
   - name: mart_data_freshness
     description: "Pipeline health — when each source was last loaded"
     columns:

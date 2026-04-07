@@ -1,4 +1,5 @@
 import sys
+import shlex
 from pathlib import Path
 import subprocess
 from loguru import logger
@@ -21,7 +22,7 @@ def ingestion(name: str, fn):
 
 def dbt(command: str) -> bool:
     result = subprocess.run(
-        ["uv", "run", "dbt", *command.split()],
+        ["uv", "run", "dbt", *shlex.split(command)()],
         cwd=DBT_DIR,
         capture_output=False,
     )
