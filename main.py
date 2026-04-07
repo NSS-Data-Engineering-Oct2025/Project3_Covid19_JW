@@ -22,7 +22,7 @@ def ingestion(name: str, fn):
 
 def dbt(command: str) -> bool:
     result = subprocess.run(
-        ["uv", "run", "dbt", *shlex.split(command)()],
+        ["uv", "run", "dbt", *shlex.split(command)],
         cwd=DBT_DIR,
         capture_output=False,
     )
