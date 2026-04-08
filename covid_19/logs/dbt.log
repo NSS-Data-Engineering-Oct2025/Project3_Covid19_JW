@@ -5869,3 +5869,1812 @@ having count(*) > 1
 [0m18:50:53.776674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E580880640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5804F72F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5802EFF00>]}
 [0m18:50:53.777250 [debug] [MainThread]: Flushing usage events
 [0m18:50:53.979225 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:45:56.054596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A2544C20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A0078910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A3018910>]}
+
+
+============================== 06:45:56.060421 | e733b331-50af-4a86-8283-afb84434edbd ==============================
+[0m06:45:56.060421 [info ] [MainThread]: Running with dbt=1.11.7
+[0m06:45:56.061387 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Admin\\workspace\\DE_2025\\Project3_Covid19_JW\\covid_19\\logs'}
+[0m06:45:57.322881 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m06:45:57.323773 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m06:45:57.324469 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m06:45:57.670155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A298EEA0>]}
+[0m06:45:57.756437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B7F7D370>]}
+[0m06:45:57.758262 [info ] [MainThread]: Registered adapter: snowflake=1.11.3
+[0m06:45:58.587490 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m06:46:00.842432 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:46:00.842924 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m06:46:00.843296 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:46:00.914607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B7F8DE50>]}
+[0m06:46:01.050050 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\manifest.json
+[0m06:46:01.067623 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\semantic_manifest.json
+[0m06:46:01.113778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A20AD8B0>]}
+[0m06:46:01.114396 [info ] [MainThread]: Found 12 models, 26 data tests, 3 sources, 639 macros
+[0m06:46:01.115140 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B8023070>]}
+[0m06:46:01.118153 [info ] [MainThread]: 
+[0m06:46:01.118991 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:46:01.119842 [info ] [MainThread]: 
+[0m06:46:01.120817 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m06:46:01.128143 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB'
+[0m06:46:01.139094 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB'
+[0m06:46:01.158793 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB'
+[0m06:46:03.863027 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB"
+[0m06:46:03.863662 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB"
+[0m06:46:03.864105 [debug] [ThreadPool]: On list_COVID_DB: show terse schemas in database COVID_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB"} */
+[0m06:46:03.864738 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB"
+[0m06:46:03.865264 [debug] [ThreadPool]: On list_COVID_DB: show terse schemas in database COVID_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB"} */
+[0m06:46:03.866690 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:03.866224 [debug] [ThreadPool]: On list_COVID_DB: show terse schemas in database COVID_DB
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB"} */
+[0m06:46:03.865740 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:03.867244 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:04.916082 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.049 seconds
+[0m06:46:04.936405 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.070 seconds
+[0m06:46:04.949960 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.084 seconds
+[0m06:46:04.954102 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB_STAGING'
+[0m06:46:04.960768 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB_MARTS'
+[0m06:46:04.971776 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB_MARTS"
+[0m06:46:04.976280 [debug] [ThreadPool]: On list_COVID_DB_MARTS: show objects in COVID_DB.MARTS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB_MARTS"} */;
+[0m06:46:04.976026 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB_STAGING"
+[0m06:46:04.977229 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:04.977676 [debug] [ThreadPool]: On list_COVID_DB_STAGING: show objects in COVID_DB.STAGING
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB_STAGING"} */;
+[0m06:46:04.978217 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB_INTERMEDIATE'
+[0m06:46:04.978934 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:04.981075 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB_INTERMEDIATE"
+[0m06:46:04.981656 [debug] [ThreadPool]: On list_COVID_DB_INTERMEDIATE: show objects in COVID_DB.INTERMEDIATE
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB_INTERMEDIATE"} */;
+[0m06:46:04.982015 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:05.696342 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.714 seconds
+[0m06:46:05.794976 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.816 seconds
+[0m06:46:06.060411 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 1.083 seconds
+[0m06:46:06.064293 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B8BEA680>]}
+[0m06:46:06.072171 [debug] [Thread-3 (]: Began running node model.covid_pipeline.stg_population
+[0m06:46:06.071793 [debug] [Thread-2 (]: Began running node model.covid_pipeline.stg_covid_cases
+[0m06:46:06.073344 [debug] [Thread-4 (]: Began running node model.covid_pipeline.stg_vaccinations
+[0m06:46:06.074274 [info ] [Thread-3 (]: 2 of 12 START sql view model STAGING.stg_population ............................ [RUN]
+[0m06:46:06.077164 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.covid_pipeline.stg_population'
+[0m06:46:06.075234 [info ] [Thread-2 (]: 1 of 12 START sql view model STAGING.stg_covid_cases ........................... [RUN]
+[0m06:46:06.078109 [debug] [Thread-3 (]: Began compiling node model.covid_pipeline.stg_population
+[0m06:46:06.079069 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.covid_pipeline.stg_covid_cases'
+[0m06:46:06.076196 [info ] [Thread-4 (]: 3 of 12 START sql view model STAGING.stg_vaccinations .......................... [RUN]
+[0m06:46:06.091541 [debug] [Thread-3 (]: Writing injected SQL for node "model.covid_pipeline.stg_population"
+[0m06:46:06.092300 [debug] [Thread-2 (]: Began compiling node model.covid_pipeline.stg_covid_cases
+[0m06:46:06.093017 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.covid_pipeline.stg_vaccinations'
+[0m06:46:06.097320 [debug] [Thread-2 (]: Writing injected SQL for node "model.covid_pipeline.stg_covid_cases"
+[0m06:46:06.098023 [debug] [Thread-4 (]: Began compiling node model.covid_pipeline.stg_vaccinations
+[0m06:46:06.101456 [debug] [Thread-4 (]: Writing injected SQL for node "model.covid_pipeline.stg_vaccinations"
+[0m06:46:06.102732 [debug] [Thread-3 (]: Began executing node model.covid_pipeline.stg_population
+[0m06:46:06.112316 [debug] [Thread-2 (]: Began executing node model.covid_pipeline.stg_covid_cases
+[0m06:46:06.165061 [debug] [Thread-2 (]: Writing runtime sql for node "model.covid_pipeline.stg_covid_cases"
+[0m06:46:06.165997 [debug] [Thread-3 (]: Writing runtime sql for node "model.covid_pipeline.stg_population"
+[0m06:46:06.166657 [debug] [Thread-4 (]: Began executing node model.covid_pipeline.stg_vaccinations
+[0m06:46:06.170357 [debug] [Thread-4 (]: Writing runtime sql for node "model.covid_pipeline.stg_vaccinations"
+[0m06:46:06.173151 [debug] [Thread-2 (]: Using snowflake connection "model.covid_pipeline.stg_covid_cases"
+[0m06:46:06.173820 [debug] [Thread-2 (]: On model.covid_pipeline.stg_covid_cases: create or replace   view COVID_DB.STAGING.stg_covid_cases
+  
+  
+  
+  
+  as (
+    -- Staging: CDC COVID-19 cases
+-- Light cleaning only — no business logic here.
+-- Column names mapped from actual RAW_COVID_CASES schema (verified 2026-03-31).
+
+with source as (
+    select * from COVID_DB.RAW.raw_covid_cases
+),
+
+cleaned as (
+    select
+        -- Build a 5-digit FIPS key for joining
+        lpad(state_fips_code, 2, '0') || lpad(county_fips_code, 3, '0') as county_fips,
+        lpad(state_fips_code, 2, '0')                                    as state_fips,
+
+        -- Normalize month to a proper date (first day of the month)
+        try_to_date(case_month, 'YYYY-MM')                               as case_month,
+
+        -- Geographic fields
+        nullif(trim(res_state), '')   as res_state,
+        nullif(trim(res_county), '')  as res_county,
+
+        -- Demographic fields
+        nullif(trim(age_group), '')   as age_group,
+        nullif(trim(sex), '')         as sex,
+        nullif(trim(race), '')        as race,
+        nullif(trim(ethnicity), '')   as ethnicity,
+
+        -- Clinical status fields
+        nullif(trim(current_status), '')             as current_status,
+        nullif(trim(symptom_status), '')             as symptom_status,
+        nullif(trim(hosp_yn), '')                    as hosp_yn,
+        nullif(trim(icu_yn), '')                     as icu_yn,
+        nullif(trim(death_yn), '')                   as death_yn,
+        nullif(trim(underlying_conditions_yn), '')   as underlying_conditions_yn,
+
+        -- Derived binary flags for easier aggregation in intermediate/marts
+        case when upper(death_yn) = 'YES' then 1 else 0 end   as is_death,
+        case when upper(hosp_yn)  = 'YES' then 1 else 0 end   as is_hospitalized,
+        case when upper(icu_yn)   = 'YES' then 1 else 0 end   as is_icu,
+
+        current_timestamp() as _loaded_at
+
+    from source
+    where state_fips_code is not null
+      and case_month is not null
+)
+
+select * from cleaned
+  )
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.stg_covid_cases"} */;
+[0m06:46:06.175069 [debug] [Thread-3 (]: Using snowflake connection "model.covid_pipeline.stg_population"
+[0m06:46:06.175612 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m06:46:06.176265 [debug] [Thread-3 (]: On model.covid_pipeline.stg_population: create or replace   view COVID_DB.STAGING.stg_population
+  
+  
+  
+  
+  as (
+    -- Staging: US Census 2023 county population estimates
+-- Static dataset — one row per county.
+
+with source as (
+    select * from COVID_DB.RAW.raw_population
+),
+
+cleaned as (
+    select
+        lpad(fips, 5, '0')          as county_fips,
+        lpad(state, 2, '0')         as state_fips,
+        lpad(county, 3, '0')        as county_code,
+        trim(name)                   as county_name,
+        try_to_number(pop)           as population,
+
+        current_timestamp() as _loaded_at
+
+    from source
+    where fips is not null
+      and pop is not null
+)
+
+select * from cleaned
+  )
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.stg_population"} */;
+[0m06:46:06.178716 [debug] [Thread-4 (]: Using snowflake connection "model.covid_pipeline.stg_vaccinations"
+[0m06:46:06.179438 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m06:46:06.180128 [debug] [Thread-4 (]: On model.covid_pipeline.stg_vaccinations: create or replace   view COVID_DB.STAGING.stg_vaccinations
+  
+  
+  
+  
+  as (
+    -- Staging: CDC COVID-19 vaccinations by county
+-- Light cleaning only — cast types, normalize FIPS, drop junk rows.
+
+with source as (
+    select * from COVID_DB.RAW.raw_vaccinations
+),
+
+cleaned as (
+    select
+        lpad(fips, 5, '0')                    as county_fips,
+        nullif(trim(recip_county), '')         as county_name,
+        upper(trim(recip_state))               as state_abbrev,
+        try_to_date(date)                      as vaccination_date,
+
+        try_to_number(administered_dose1_recip)  as dose1_cumulative,
+        try_to_number(series_complete_yes)        as series_complete_cumulative,
+        try_to_number(booster_doses)              as booster_cumulative,
+        try_to_number(census2019)                 as census2019_pop,
+
+        current_timestamp() as _loaded_at
+
+    from source
+    where fips is not null
+      and fips not in ('UNK', 'UNKNOWN', '')
+      and date is not null
+)
+
+select * from cleaned
+  )
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.stg_vaccinations"} */;
+[0m06:46:06.181682 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m06:46:06.971349 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.792 seconds
+[0m06:46:06.996262 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.815 seconds
+[0m06:46:06.999132 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.824 seconds
+[0m06:46:07.002051 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B86A0F50>]}
+[0m06:46:07.003316 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9D520A0>]}
+[0m06:46:07.002855 [info ] [Thread-3 (]: 2 of 12 OK created sql view model STAGING.stg_population ....................... [[32mSUCCESS 1[0m in 0.92s]
+[0m06:46:07.004608 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A2943F70>]}
+[0m06:46:07.005353 [debug] [Thread-3 (]: Finished running node model.covid_pipeline.stg_population
+[0m06:46:07.004220 [info ] [Thread-4 (]: 3 of 12 OK created sql view model STAGING.stg_vaccinations ..................... [[32mSUCCESS 1[0m in 0.91s]
+[0m06:46:07.006176 [info ] [Thread-2 (]: 1 of 12 OK created sql view model STAGING.stg_covid_cases ...................... [[32mSUCCESS 1[0m in 0.92s]
+[0m06:46:07.007155 [debug] [Thread-4 (]: Finished running node model.covid_pipeline.stg_vaccinations
+[0m06:46:07.007824 [debug] [Thread-2 (]: Finished running node model.covid_pipeline.stg_covid_cases
+[0m06:46:07.008722 [debug] [Thread-3 (]: Began running node model.covid_pipeline.int_vaccinations_with_population
+[0m06:46:07.009676 [debug] [Thread-4 (]: Began running node model.covid_pipeline.mart_data_freshness
+[0m06:46:07.010176 [debug] [Thread-5 (]: Began running node model.covid_pipeline.int_cases_with_population
+[0m06:46:07.009258 [info ] [Thread-3 (]: 5 of 12 START sql view model INTERMEDIATE.int_vaccinations_with_population ..... [RUN]
+[0m06:46:07.011004 [info ] [Thread-4 (]: 6 of 12 START sql table model MARTS.mart_data_freshness ........................ [RUN]
+[0m06:46:07.012345 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.stg_population, now model.covid_pipeline.int_vaccinations_with_population)
+[0m06:46:07.012912 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.stg_vaccinations, now model.covid_pipeline.mart_data_freshness)
+[0m06:46:07.011623 [info ] [Thread-5 (]: 4 of 12 START sql view model INTERMEDIATE.int_cases_with_population ............ [RUN]
+[0m06:46:07.013421 [debug] [Thread-3 (]: Began compiling node model.covid_pipeline.int_vaccinations_with_population
+[0m06:46:07.014257 [debug] [Thread-4 (]: Began compiling node model.covid_pipeline.mart_data_freshness
+[0m06:46:07.015107 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.covid_pipeline.int_cases_with_population'
+[0m06:46:07.019696 [debug] [Thread-3 (]: Writing injected SQL for node "model.covid_pipeline.int_vaccinations_with_population"
+[0m06:46:07.023735 [debug] [Thread-4 (]: Writing injected SQL for node "model.covid_pipeline.mart_data_freshness"
+[0m06:46:07.024339 [debug] [Thread-5 (]: Began compiling node model.covid_pipeline.int_cases_with_population
+[0m06:46:07.029080 [debug] [Thread-5 (]: Writing injected SQL for node "model.covid_pipeline.int_cases_with_population"
+[0m06:46:07.030085 [debug] [Thread-4 (]: Began executing node model.covid_pipeline.mart_data_freshness
+[0m06:46:07.030719 [debug] [Thread-3 (]: Began executing node model.covid_pipeline.int_vaccinations_with_population
+[0m06:46:07.064262 [debug] [Thread-4 (]: Writing runtime sql for node "model.covid_pipeline.mart_data_freshness"
+[0m06:46:07.067497 [debug] [Thread-3 (]: Writing runtime sql for node "model.covid_pipeline.int_vaccinations_with_population"
+[0m06:46:07.068427 [debug] [Thread-5 (]: Began executing node model.covid_pipeline.int_cases_with_population
+[0m06:46:07.071767 [debug] [Thread-5 (]: Writing runtime sql for node "model.covid_pipeline.int_cases_with_population"
+[0m06:46:07.073743 [debug] [Thread-4 (]: Using snowflake connection "model.covid_pipeline.mart_data_freshness"
+[0m06:46:07.074289 [debug] [Thread-4 (]: On model.covid_pipeline.mart_data_freshness: create or replace transient table COVID_DB.MARTS.mart_data_freshness
+    
+    
+    
+    as (-- Mart: Data freshness report by source
+-- Shows when each source was last loaded by reading _loaded_at from staging views.
+-- Staging models add current_timestamp() as _loaded_at on every dbt run.
+
+with freshness as (
+    select
+        'raw_covid_cases'    as source_table,
+        'CDC SODA n8mc-b4w4' as source_name,
+        max(_loaded_at)      as last_loaded_at
+    from COVID_DB.STAGING.stg_covid_cases
+
+    union all
+
+    select
+        'raw_vaccinations'   as source_table,
+        'CDC SODA 8xkx-amqh' as source_name,
+        max(_loaded_at)      as last_loaded_at
+    from COVID_DB.STAGING.stg_vaccinations
+
+    union all
+
+    select
+        'raw_population'     as source_table,
+        'US Census PEP 2023' as source_name,
+        max(_loaded_at)      as last_loaded_at
+    from COVID_DB.STAGING.stg_population
+)
+
+select
+    source_table,
+    source_name,
+    last_loaded_at,
+    datediff('hour', last_loaded_at, current_timestamp())  as hours_since_load,
+    case
+        when datediff('day', last_loaded_at, current_timestamp()) <= 1  then 'Fresh'
+        when datediff('day', last_loaded_at, current_timestamp()) <= 7  then 'Recent'
+        when datediff('day', last_loaded_at, current_timestamp()) <= 30 then 'Stale'
+        else 'Very Stale'
+    end as freshness_status
+
+from freshness
+order by source_table
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_data_freshness"} */;
+[0m06:46:07.076345 [debug] [Thread-3 (]: Using snowflake connection "model.covid_pipeline.int_vaccinations_with_population"
+[0m06:46:07.076857 [debug] [Thread-3 (]: On model.covid_pipeline.int_vaccinations_with_population: create or replace   view COVID_DB.INTERMEDIATE.int_vaccinations_with_population
+  
+  
+  
+  
+  as (
+    -- Intermediate: CDC vaccinations enriched with Census population
+-- Takes the latest vaccination snapshot per county (max date),
+-- joins population for coverage rate calculations.
+-- Used by: mart_vaccination_vs_cases
+
+with vaccinations as (
+    select
+        county_fips,
+        state_abbrev,
+        county_name,
+        vaccination_date,
+        dose1_cumulative,
+        series_complete_cumulative,
+        booster_cumulative,
+        census2019_pop,
+        -- Rank to get the most recent snapshot per county
+        row_number() over (
+            partition by county_fips
+            order by vaccination_date desc
+        ) as rn
+    from COVID_DB.STAGING.stg_vaccinations
+),
+
+latest as (
+    select * from vaccinations where rn = 1
+),
+
+population as (
+    select county_fips, population
+    from COVID_DB.STAGING.stg_population
+),
+
+joined as (
+    select
+        v.county_fips,
+        v.state_abbrev,
+        v.county_name,
+        v.vaccination_date                as latest_vaccination_date,
+        v.dose1_cumulative,
+        v.series_complete_cumulative,
+        v.booster_cumulative,
+        coalesce(p.population, v.census2019_pop) as population,
+
+        -- Coverage rates (cap at 100% to handle reporting artifacts)
+        least(
+            round(v.series_complete_cumulative * 100.0 / nullif(coalesce(p.population, v.census2019_pop), 0), 2),
+            100
+        ) as pct_series_complete,
+
+        least(
+            round(v.booster_cumulative * 100.0 / nullif(coalesce(p.population, v.census2019_pop), 0), 2),
+            100
+        ) as pct_boosted
+
+    from latest v
+    left join population p on v.county_fips = p.county_fips
+)
+
+select * from joined
+  )
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.int_vaccinations_with_population"} */;
+[0m06:46:07.079154 [debug] [Thread-5 (]: Using snowflake connection "model.covid_pipeline.int_cases_with_population"
+[0m06:46:07.079645 [debug] [Thread-5 (]: On model.covid_pipeline.int_cases_with_population: create or replace   view COVID_DB.INTERMEDIATE.int_cases_with_population
+  
+  
+  
+  
+  as (
+    -- Intermediate: CDC cases enriched with Census population
+-- Aggregates case counts to monthly county level, then joins population.
+-- Used by: mart_cases_per_100k, mart_case_fatality_rate, mart_rolling_avg_cases
+
+with cases as (
+    select
+        county_fips,
+        state_fips,
+        case_month,
+        count(*)        as total_cases,
+        sum(is_death)   as total_deaths,
+        sum(is_hospitalized) as total_hospitalizations
+    from COVID_DB.STAGING.stg_covid_cases
+    group by 1, 2, 3
+),
+
+population as (
+    select
+        county_fips,
+        county_name,
+        population
+    from COVID_DB.STAGING.stg_population
+),
+
+joined as (
+    select
+        c.county_fips,
+        c.state_fips,
+        c.case_month,
+        c.total_cases,
+        c.total_deaths,
+        c.total_hospitalizations,
+        p.county_name,
+        p.population
+    from cases c
+    left join population p
+        on c.county_fips = p.county_fips
+)
+
+select * from joined
+  )
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.int_cases_with_population"} */;
+[0m06:46:07.080105 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m06:46:07.647512 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.569 seconds
+[0m06:46:07.650167 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B876A650>]}
+[0m06:46:07.651043 [info ] [Thread-3 (]: 5 of 12 OK created sql view model INTERMEDIATE.int_vaccinations_with_population  [[32mSUCCESS 1[0m in 0.64s]
+[0m06:46:07.652658 [debug] [Thread-3 (]: Finished running node model.covid_pipeline.int_vaccinations_with_population
+[0m06:46:08.140533 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 1.060 seconds
+[0m06:46:08.142806 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9E32580>]}
+[0m06:46:08.143515 [info ] [Thread-5 (]: 4 of 12 OK created sql view model INTERMEDIATE.int_cases_with_population ....... [[32mSUCCESS 1[0m in 1.13s]
+[0m06:46:08.144522 [debug] [Thread-5 (]: Finished running node model.covid_pipeline.int_cases_with_population
+[0m06:46:08.145358 [debug] [Thread-2 (]: Began running node model.covid_pipeline.mart_case_fatality_rate
+[0m06:46:08.146352 [debug] [Thread-3 (]: Began running node model.covid_pipeline.mart_cases_per_100k
+[0m06:46:08.147313 [debug] [Thread-5 (]: Began running node model.covid_pipeline.mart_hospitalization_rate
+[0m06:46:08.145928 [info ] [Thread-2 (]: 7 of 12 START sql table model MARTS.mart_case_fatality_rate .................... [RUN]
+[0m06:46:08.148421 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.stg_covid_cases, now model.covid_pipeline.mart_case_fatality_rate)
+[0m06:46:08.148876 [debug] [Thread-2 (]: Began compiling node model.covid_pipeline.mart_case_fatality_rate
+[0m06:46:08.151718 [debug] [Thread-2 (]: Writing injected SQL for node "model.covid_pipeline.mart_case_fatality_rate"
+[0m06:46:08.146905 [info ] [Thread-3 (]: 8 of 12 START sql table model MARTS.mart_cases_per_100k ........................ [RUN]
+[0m06:46:08.153154 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.int_vaccinations_with_population, now model.covid_pipeline.mart_cases_per_100k)
+[0m06:46:08.147846 [info ] [Thread-5 (]: 9 of 12 START sql table model MARTS.mart_hospitalization_rate .................. [RUN]
+[0m06:46:08.154098 [debug] [Thread-3 (]: Began compiling node model.covid_pipeline.mart_cases_per_100k
+[0m06:46:08.154702 [debug] [Thread-2 (]: Began executing node model.covid_pipeline.mart_case_fatality_rate
+[0m06:46:08.155258 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.int_cases_with_population, now model.covid_pipeline.mart_hospitalization_rate)
+[0m06:46:08.158979 [debug] [Thread-3 (]: Writing injected SQL for node "model.covid_pipeline.mart_cases_per_100k"
+[0m06:46:08.162263 [debug] [Thread-2 (]: Writing runtime sql for node "model.covid_pipeline.mart_case_fatality_rate"
+[0m06:46:08.162913 [debug] [Thread-5 (]: Began compiling node model.covid_pipeline.mart_hospitalization_rate
+[0m06:46:08.166424 [debug] [Thread-5 (]: Writing injected SQL for node "model.covid_pipeline.mart_hospitalization_rate"
+[0m06:46:08.167431 [debug] [Thread-3 (]: Began executing node model.covid_pipeline.mart_cases_per_100k
+[0m06:46:08.173495 [debug] [Thread-2 (]: Using snowflake connection "model.covid_pipeline.mart_case_fatality_rate"
+[0m06:46:08.174105 [debug] [Thread-5 (]: Began executing node model.covid_pipeline.mart_hospitalization_rate
+[0m06:46:08.175054 [debug] [Thread-3 (]: Writing runtime sql for node "model.covid_pipeline.mart_cases_per_100k"
+[0m06:46:08.175860 [debug] [Thread-2 (]: On model.covid_pipeline.mart_case_fatality_rate: create or replace transient table COVID_DB.MARTS.mart_case_fatality_rate
+    
+    
+    
+    as (-- Mart: Case fatality rate (CFR) by state and month
+-- CFR = deaths / confirmed_cases × 100
+-- Highlights regional healthcare capacity differences over time.
+
+with base as (
+    select
+        state_fips,
+        case_month,
+        sum(total_cases)  as total_cases,
+        sum(total_deaths) as total_deaths
+    from COVID_DB.INTERMEDIATE.int_cases_with_population
+    group by 1, 2
+)
+
+select
+    state_fips,
+    case_month,
+    total_cases,
+    total_deaths,
+    round(
+        total_deaths * 100.0 / nullif(total_cases, 0),
+        4
+    ) as case_fatality_rate_pct
+from base
+order by state_fips, case_month
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_case_fatality_rate"} */;
+[0m06:46:08.180169 [debug] [Thread-5 (]: Writing runtime sql for node "model.covid_pipeline.mart_hospitalization_rate"
+[0m06:46:08.183978 [debug] [Thread-3 (]: Using snowflake connection "model.covid_pipeline.mart_cases_per_100k"
+[0m06:46:08.184614 [debug] [Thread-3 (]: On model.covid_pipeline.mart_cases_per_100k: create or replace transient table COVID_DB.MARTS.mart_cases_per_100k
+    
+    
+    
+    as (-- Mart: Cases per 100k population by county and month
+-- Normalizes case counts for fair comparison across counties of different sizes.
+
+select
+    county_fips,
+    county_name,
+    state_fips,
+    case_month,
+    total_cases,
+    population,
+    round(
+        total_cases * 100000.0 / nullif(population, 0),
+        2
+    ) as cases_per_100k
+from COVID_DB.INTERMEDIATE.int_cases_with_population
+where population is not null
+order by state_fips, county_fips, case_month
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_cases_per_100k"} */;
+[0m06:46:08.186033 [debug] [Thread-5 (]: Using snowflake connection "model.covid_pipeline.mart_hospitalization_rate"
+[0m06:46:08.187790 [debug] [Thread-5 (]: On model.covid_pipeline.mart_hospitalization_rate: create or replace transient table COVID_DB.MARTS.mart_hospitalization_rate
+    
+    
+    
+    as (-- Mart: Hospitalization Rate by State and Month
+-- Custom metric: what percentage of confirmed cases required hospitalization?
+-- Rationale: CFR shows who died, but hospitalization rate shows healthcare system burden.
+-- A region with high hospitalization rate signals stress on hospital capacity even
+-- if the fatality rate is low (e.g. due to better ICU care).
+
+with base as (
+    select
+        state_fips,
+        case_month,
+        sum(total_cases)            as total_cases,
+        sum(total_hospitalizations) as total_hospitalizations,
+        sum(total_deaths)           as total_deaths
+    from COVID_DB.INTERMEDIATE.int_cases_with_population
+    where total_cases > 0
+    group by 1, 2
+),
+
+with_rate as (
+    select
+        state_fips,
+        case_month,
+        total_cases,
+        total_hospitalizations,
+        total_deaths,
+        round(
+            100.0 * total_hospitalizations / nullif(total_cases, 0),
+            4
+        ) as hospitalization_rate_pct
+    from base
+)
+
+select * from with_rate
+order by state_fips, case_month
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_hospitalization_rate"} */;
+[0m06:46:10.082127 [debug] [Thread-4 (]: SQL status: SUCCESS 3 in 3.007 seconds
+[0m06:46:10.084032 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9CE5FD0>]}
+[0m06:46:10.084631 [info ] [Thread-4 (]: 6 of 12 OK created sql table model MARTS.mart_data_freshness ................... [[32mSUCCESS 3[0m in 3.07s]
+[0m06:46:10.085772 [debug] [Thread-4 (]: Finished running node model.covid_pipeline.mart_data_freshness
+[0m06:46:10.086478 [debug] [Thread-4 (]: Began running node model.covid_pipeline.mart_rolling_avg_cases
+[0m06:46:10.087294 [info ] [Thread-4 (]: 10 of 12 START sql table model MARTS.mart_rolling_avg_cases .................... [RUN]
+[0m06:46:10.088149 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.mart_data_freshness, now model.covid_pipeline.mart_rolling_avg_cases)
+[0m06:46:10.088566 [debug] [Thread-4 (]: Began compiling node model.covid_pipeline.mart_rolling_avg_cases
+[0m06:46:10.091144 [debug] [Thread-4 (]: Writing injected SQL for node "model.covid_pipeline.mart_rolling_avg_cases"
+[0m06:46:10.092067 [debug] [Thread-4 (]: Began executing node model.covid_pipeline.mart_rolling_avg_cases
+[0m06:46:10.094930 [debug] [Thread-4 (]: Writing runtime sql for node "model.covid_pipeline.mart_rolling_avg_cases"
+[0m06:46:10.096426 [debug] [Thread-4 (]: Using snowflake connection "model.covid_pipeline.mart_rolling_avg_cases"
+[0m06:46:10.096890 [debug] [Thread-4 (]: On model.covid_pipeline.mart_rolling_avg_cases: create or replace transient table COVID_DB.MARTS.mart_rolling_avg_cases
+    
+    
+    
+    as (-- Mart: 7-day rolling average of new cases (approximated at monthly granularity)
+-- Note: CDC cases data is monthly. We compute a 3-month rolling average as a
+-- reasonable proxy — document this in the dashboard.
+
+with monthly as (
+    select
+        state_fips,
+        case_month,
+        sum(total_cases) as monthly_cases
+    from COVID_DB.INTERMEDIATE.int_cases_with_population
+    group by 1, 2
+),
+
+rolling as (
+    select
+        state_fips,
+        case_month,
+        monthly_cases,
+        avg(monthly_cases) over (
+            partition by state_fips
+            order by case_month
+            rows between 2 preceding and current row
+        ) as rolling_3mo_avg_cases
+    from monthly
+)
+
+select * from rolling
+order by state_fips, case_month
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_rolling_avg_cases"} */;
+[0m06:46:11.520393 [debug] [Thread-3 (]: SQL status: SUCCESS 680 in 3.334 seconds
+[0m06:46:11.522280 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9DDE8D0>]}
+[0m06:46:11.522880 [info ] [Thread-3 (]: 8 of 12 OK created sql table model MARTS.mart_cases_per_100k ................... [[32mSUCCESS 680[0m in 3.37s]
+[0m06:46:11.523951 [debug] [Thread-3 (]: Finished running node model.covid_pipeline.mart_cases_per_100k
+[0m06:46:11.524591 [debug] [Thread-3 (]: Began running node model.covid_pipeline.mart_severity_index
+[0m06:46:11.525302 [info ] [Thread-3 (]: 11 of 12 START sql table model MARTS.mart_severity_index ....................... [RUN]
+[0m06:46:11.526058 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.mart_cases_per_100k, now model.covid_pipeline.mart_severity_index)
+[0m06:46:11.526462 [debug] [Thread-3 (]: Began compiling node model.covid_pipeline.mart_severity_index
+[0m06:46:11.529372 [debug] [Thread-3 (]: Writing injected SQL for node "model.covid_pipeline.mart_severity_index"
+[0m06:46:11.530282 [debug] [Thread-3 (]: Began executing node model.covid_pipeline.mart_severity_index
+[0m06:46:11.533185 [debug] [Thread-3 (]: Writing runtime sql for node "model.covid_pipeline.mart_severity_index"
+[0m06:46:11.535326 [debug] [Thread-3 (]: Using snowflake connection "model.covid_pipeline.mart_severity_index"
+[0m06:46:11.535833 [debug] [Thread-3 (]: On model.covid_pipeline.mart_severity_index: create or replace transient table COVID_DB.MARTS.mart_severity_index
+    
+    
+    
+    as (-- Mart: Severity Index by County
+-- Custom metric: composite score combining hospitalization rate, ICU rate, and CFR.
+-- Rationale: a single number that helps public health officials rank counties by
+-- overall disease severity — useful for resource allocation and early warning.
+--
+-- Formula:
+--   severity_index = (hosp_rate * 0.4) + (icu_rate * 0.4) + (cfr * 0.2)
+-- Weights reflect that ICU burden and hospitalization are the strongest signals
+-- of healthcare system stress, while CFR can lag due to reporting delays.
+
+with cases_agg as (
+    select
+        county_fips,
+        state_fips,
+        county_name,
+        sum(total_cases)            as total_cases,
+        sum(total_hospitalizations) as total_hospitalizations,
+        sum(total_deaths)           as total_deaths
+    from COVID_DB.INTERMEDIATE.int_cases_with_population
+    where total_cases > 0
+    group by 1, 2, 3
+),
+
+icu_agg as (
+    select
+        county_fips,
+        sum(is_icu) as total_icu_cases
+    from COVID_DB.STAGING.stg_covid_cases
+    group by 1
+),
+
+joined as (
+    select
+        c.county_fips,
+        c.state_fips,
+        c.county_name,
+        c.total_cases,
+        c.total_hospitalizations,
+        c.total_deaths,
+        coalesce(i.total_icu_cases, 0) as total_icu_cases,
+
+        round(100.0 * c.total_hospitalizations / nullif(c.total_cases, 0), 4) as hosp_rate_pct,
+        round(100.0 * i.total_icu_cases        / nullif(c.total_cases, 0), 4) as icu_rate_pct,
+        round(100.0 * c.total_deaths           / nullif(c.total_cases, 0), 4) as cfr_pct
+    from cases_agg c
+    left join icu_agg i on c.county_fips = i.county_fips
+),
+
+with_index as (
+    select
+        *,
+        round(
+            (coalesce(hosp_rate_pct, 0) * 0.4)
+            + (coalesce(icu_rate_pct, 0) * 0.4)
+            + (coalesce(cfr_pct, 0) * 0.2),
+            4
+        ) as severity_index
+    from joined
+)
+
+select * from with_index
+order by severity_index desc
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_severity_index"} */;
+[0m06:46:13.461873 [debug] [Thread-2 (]: SQL status: SUCCESS 1276 in 5.281 seconds
+[0m06:46:13.465272 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9CE52B0>]}
+[0m06:46:13.466399 [info ] [Thread-2 (]: 7 of 12 OK created sql table model MARTS.mart_case_fatality_rate ............... [[32mSUCCESS 1276[0m in 5.32s]
+[0m06:46:13.468166 [debug] [Thread-2 (]: Finished running node model.covid_pipeline.mart_case_fatality_rate
+[0m06:46:13.468952 [debug] [Thread-2 (]: Began running node model.covid_pipeline.mart_vaccination_vs_cases
+[0m06:46:13.470035 [info ] [Thread-2 (]: 12 of 12 START sql table model MARTS.mart_vaccination_vs_cases ................. [RUN]
+[0m06:46:13.471170 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.covid_pipeline.mart_case_fatality_rate, now model.covid_pipeline.mart_vaccination_vs_cases)
+[0m06:46:13.471804 [debug] [Thread-2 (]: Began compiling node model.covid_pipeline.mart_vaccination_vs_cases
+[0m06:46:13.475438 [debug] [Thread-2 (]: Writing injected SQL for node "model.covid_pipeline.mart_vaccination_vs_cases"
+[0m06:46:13.476568 [debug] [Thread-2 (]: Began executing node model.covid_pipeline.mart_vaccination_vs_cases
+[0m06:46:13.479833 [debug] [Thread-2 (]: Writing runtime sql for node "model.covid_pipeline.mart_vaccination_vs_cases"
+[0m06:46:13.482091 [debug] [Thread-2 (]: Using snowflake connection "model.covid_pipeline.mart_vaccination_vs_cases"
+[0m06:46:13.482965 [debug] [Thread-2 (]: On model.covid_pipeline.mart_vaccination_vs_cases: create or replace transient table COVID_DB.MARTS.mart_vaccination_vs_cases
+    
+    
+    
+    as (-- Mart: Vaccination coverage vs case rate by county
+-- Joins the latest vaccination snapshot with cumulative case counts.
+-- Enables correlation analysis: do more-vaccinated counties show fewer cases?
+
+with cases_cumulative as (
+    select
+        county_fips,
+        sum(total_cases)  as total_cases,
+        sum(total_deaths) as total_deaths,
+        max(population)   as population
+    from COVID_DB.INTERMEDIATE.int_cases_with_population
+    group by 1
+),
+
+vaccinations as (
+    select * from COVID_DB.INTERMEDIATE.int_vaccinations_with_population
+)
+
+select
+    v.county_fips,
+    v.state_abbrev,
+    v.county_name,
+    v.latest_vaccination_date,
+    v.pct_series_complete,
+    v.pct_boosted,
+    c.total_cases,
+    c.total_deaths,
+    c.population,
+    round(
+        c.total_cases * 100000.0 / nullif(c.population, 0),
+        2
+    ) as cumulative_cases_per_100k
+
+from vaccinations v
+left join cases_cumulative c on v.county_fips = c.county_fips
+order by v.state_abbrev, v.county_fips
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "model.covid_pipeline.mart_vaccination_vs_cases"} */;
+[0m06:46:14.406867 [debug] [Thread-5 (]: SQL status: SUCCESS 1276 in 6.218 seconds
+[0m06:46:14.409194 [debug] [Thread-5 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9DDE030>]}
+[0m06:46:14.409850 [info ] [Thread-5 (]: 9 of 12 OK created sql table model MARTS.mart_hospitalization_rate ............. [[32mSUCCESS 1276[0m in 6.25s]
+[0m06:46:14.410744 [debug] [Thread-5 (]: Finished running node model.covid_pipeline.mart_hospitalization_rate
+[0m06:46:14.428165 [debug] [Thread-4 (]: SQL status: SUCCESS 1276 in 4.331 seconds
+[0m06:46:14.431409 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9CE4770>]}
+[0m06:46:14.432859 [info ] [Thread-4 (]: 10 of 12 OK created sql table model MARTS.mart_rolling_avg_cases ............... [[32mSUCCESS 1276[0m in 4.34s]
+[0m06:46:14.434663 [debug] [Thread-4 (]: Finished running node model.covid_pipeline.mart_rolling_avg_cases
+[0m06:46:17.004615 [debug] [Thread-2 (]: SQL status: SUCCESS 6435 in 3.521 seconds
+[0m06:46:17.006470 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9D7AB70>]}
+[0m06:46:17.007061 [info ] [Thread-2 (]: 12 of 12 OK created sql table model MARTS.mart_vaccination_vs_cases ............ [[32mSUCCESS 6435[0m in 3.54s]
+[0m06:46:17.008060 [debug] [Thread-2 (]: Finished running node model.covid_pipeline.mart_vaccination_vs_cases
+[0m06:46:17.914677 [debug] [Thread-3 (]: SQL status: SUCCESS 151 in 6.378 seconds
+[0m06:46:17.916631 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e733b331-50af-4a86-8283-afb84434edbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9DDDC70>]}
+[0m06:46:17.917258 [info ] [Thread-3 (]: 11 of 12 OK created sql table model MARTS.mart_severity_index .................. [[32mSUCCESS 151[0m in 6.39s]
+[0m06:46:17.918243 [debug] [Thread-3 (]: Finished running node model.covid_pipeline.mart_severity_index
+[0m06:46:17.920068 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:46:17.920520 [debug] [MainThread]: Connection 'list_COVID_DB' was left open.
+[0m06:46:17.920859 [debug] [MainThread]: On list_COVID_DB: Close
+[0m06:46:18.032262 [debug] [MainThread]: Connection 'list_COVID_DB' was left open.
+[0m06:46:18.032730 [debug] [MainThread]: On list_COVID_DB: Close
+[0m06:46:18.391949 [debug] [MainThread]: Connection 'list_COVID_DB' was left open.
+[0m06:46:18.392405 [debug] [MainThread]: On list_COVID_DB: Close
+[0m06:46:18.491786 [debug] [MainThread]: Connection 'list_COVID_DB_STAGING' was left open.
+[0m06:46:18.492228 [debug] [MainThread]: On list_COVID_DB_STAGING: Close
+[0m06:46:18.596353 [debug] [MainThread]: Connection 'list_COVID_DB_MARTS' was left open.
+[0m06:46:18.596859 [debug] [MainThread]: On list_COVID_DB_MARTS: Close
+[0m06:46:18.713955 [debug] [MainThread]: Connection 'list_COVID_DB_INTERMEDIATE' was left open.
+[0m06:46:18.714731 [debug] [MainThread]: On list_COVID_DB_INTERMEDIATE: Close
+[0m06:46:18.847673 [debug] [MainThread]: Connection 'model.covid_pipeline.mart_severity_index' was left open.
+[0m06:46:18.848546 [debug] [MainThread]: On model.covid_pipeline.mart_severity_index: Close
+[0m06:46:18.968542 [debug] [MainThread]: Connection 'model.covid_pipeline.mart_vaccination_vs_cases' was left open.
+[0m06:46:18.969120 [debug] [MainThread]: On model.covid_pipeline.mart_vaccination_vs_cases: Close
+[0m06:46:19.082120 [debug] [MainThread]: Connection 'model.covid_pipeline.mart_rolling_avg_cases' was left open.
+[0m06:46:19.082651 [debug] [MainThread]: On model.covid_pipeline.mart_rolling_avg_cases: Close
+[0m06:46:19.192863 [debug] [MainThread]: Connection 'model.covid_pipeline.mart_hospitalization_rate' was left open.
+[0m06:46:19.193380 [debug] [MainThread]: On model.covid_pipeline.mart_hospitalization_rate: Close
+[0m06:46:19.293601 [info ] [MainThread]: 
+[0m06:46:19.294317 [info ] [MainThread]: Finished running 7 table models, 5 view models in 0 hours 0 minutes and 18.17 seconds (18.17s).
+[0m06:46:19.297352 [debug] [MainThread]: Command end result
+[0m06:46:19.349892 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\manifest.json
+[0m06:46:19.354231 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\semantic_manifest.json
+[0m06:46:19.365999 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\run_results.json
+[0m06:46:19.366714 [info ] [MainThread]: 
+[0m06:46:19.367556 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:46:19.368275 [info ] [MainThread]: 
+[0m06:46:19.368983 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+[0m06:46:19.371015 [debug] [MainThread]: Command `dbt run` succeeded at 06:46:19.370797 after 23.51 seconds
+[0m06:46:19.371663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7A00420F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9D65430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E7B9D670B0>]}
+[0m06:46:19.372372 [debug] [MainThread]: Flushing usage events
+[0m06:46:19.578501 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:46:32.612700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002073E4F4C20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002073C028910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002073EFCC910>]}
+
+
+============================== 06:46:32.618232 | bae5456e-3917-422b-bcdd-23d8630ae3dc ==============================
+[0m06:46:32.618232 [info ] [MainThread]: Running with dbt=1.11.7
+[0m06:46:32.619189 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Admin\\.dbt', 'invocation_command': 'dbt test', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Admin\\workspace\\DE_2025\\Project3_Covid19_JW\\covid_19\\logs'}
+[0m06:46:33.835141 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m06:46:33.835731 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m06:46:33.836181 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m06:46:34.130101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bae5456e-3917-422b-bcdd-23d8630ae3dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002073E93EEA0>]}
+[0m06:46:34.226288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bae5456e-3917-422b-bcdd-23d8630ae3dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020753EFD370>]}
+[0m06:46:34.227949 [info ] [MainThread]: Registered adapter: snowflake=1.11.3
+[0m06:46:34.891468 [debug] [MainThread]: checksum: b80718358155fc17c3559352095564dd56ada1cc1a1c0ef2e62c857e71583775, vars: {}, profile: , target: , version: 1.11.7
+[0m06:46:35.138931 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m06:46:35.139482 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m06:46:35.140143 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m06:46:35.209099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bae5456e-3917-422b-bcdd-23d8630ae3dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020753F0CF50>]}
+[0m06:46:35.353049 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\manifest.json
+[0m06:46:35.356949 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\semantic_manifest.json
+[0m06:46:35.414064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bae5456e-3917-422b-bcdd-23d8630ae3dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207546B9220>]}
+[0m06:46:35.414700 [info ] [MainThread]: Found 12 models, 26 data tests, 3 sources, 639 macros
+[0m06:46:35.415487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bae5456e-3917-422b-bcdd-23d8630ae3dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207546F3850>]}
+[0m06:46:35.421169 [info ] [MainThread]: 
+[0m06:46:35.422053 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m06:46:35.422880 [info ] [MainThread]: 
+[0m06:46:35.424208 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m06:46:35.431160 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB_INTERMEDIATE'
+[0m06:46:35.439356 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB_MARTS'
+[0m06:46:35.471514 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_COVID_DB_STAGING'
+[0m06:46:35.568816 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB_MARTS"
+[0m06:46:35.569467 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB_STAGING"
+[0m06:46:35.569952 [debug] [ThreadPool]: On list_COVID_DB_MARTS: show objects in COVID_DB.MARTS
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB_MARTS"} */;
+[0m06:46:35.570576 [debug] [ThreadPool]: Using snowflake connection "list_COVID_DB_INTERMEDIATE"
+[0m06:46:35.571088 [debug] [ThreadPool]: On list_COVID_DB_STAGING: show objects in COVID_DB.STAGING
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB_STAGING"} */;
+[0m06:46:35.571541 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:35.572061 [debug] [ThreadPool]: On list_COVID_DB_INTERMEDIATE: show objects in COVID_DB.INTERMEDIATE
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "connection_name": "list_COVID_DB_INTERMEDIATE"} */;
+[0m06:46:35.572580 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:35.573338 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:46:36.474772 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.903 seconds
+[0m06:46:36.494622 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.922 seconds
+[0m06:46:36.515517 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.942 seconds
+[0m06:46:36.518455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bae5456e-3917-422b-bcdd-23d8630ae3dc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207546B3C70>]}
+[0m06:46:36.524599 [debug] [Thread-4 (]: Began running node test.covid_pipeline.assert_case_month_after_2020
+[0m06:46:36.525135 [debug] [Thread-5 (]: Began running node test.covid_pipeline.assert_cases_per_100k_not_negative
+[0m06:46:36.525602 [debug] [Thread-3 (]: Began running node test.covid_pipeline.assert_case_fatality_rate_in_range
+[0m06:46:36.526524 [debug] [Thread-2 (]: Began running node test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c
+[0m06:46:36.526080 [info ] [Thread-4 (]: 3 of 26 START test assert_case_month_after_2020 ................................ [RUN]
+[0m06:46:36.527094 [info ] [Thread-5 (]: 4 of 26 START test assert_cases_per_100k_not_negative .......................... [RUN]
+[0m06:46:36.528994 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.covid_pipeline.assert_case_month_after_2020'
+[0m06:46:36.529686 [debug] [Thread-5 (]: Acquiring new snowflake connection 'test.covid_pipeline.assert_cases_per_100k_not_negative'
+[0m06:46:36.530169 [debug] [Thread-4 (]: Began compiling node test.covid_pipeline.assert_case_month_after_2020
+[0m06:46:36.527834 [info ] [Thread-3 (]: 2 of 26 START test assert_case_fatality_rate_in_range .......................... [RUN]
+[0m06:46:36.530789 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.assert_cases_per_100k_not_negative
+[0m06:46:36.528250 [info ] [Thread-2 (]: 1 of 26 START test accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale  [RUN]
+[0m06:46:36.539510 [debug] [Thread-4 (]: Writing injected SQL for node "test.covid_pipeline.assert_case_month_after_2020"
+[0m06:46:36.540209 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.covid_pipeline.assert_case_fatality_rate_in_range'
+[0m06:46:36.543848 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.assert_cases_per_100k_not_negative"
+[0m06:46:36.544584 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c'
+[0m06:46:36.545241 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.assert_case_fatality_rate_in_range
+[0m06:46:36.546091 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c
+[0m06:46:36.550591 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.assert_case_fatality_rate_in_range"
+[0m06:46:36.551293 [debug] [Thread-4 (]: Began executing node test.covid_pipeline.assert_case_month_after_2020
+[0m06:46:36.558357 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.assert_cases_per_100k_not_negative
+[0m06:46:36.607478 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c"
+[0m06:46:36.627040 [debug] [Thread-4 (]: Writing runtime sql for node "test.covid_pipeline.assert_case_month_after_2020"
+[0m06:46:36.630575 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.assert_cases_per_100k_not_negative"
+[0m06:46:36.631857 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.assert_case_fatality_rate_in_range
+[0m06:46:36.637718 [debug] [Thread-4 (]: Using snowflake connection "test.covid_pipeline.assert_case_month_after_2020"
+[0m06:46:36.639322 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.assert_case_fatality_rate_in_range"
+[0m06:46:36.640608 [debug] [Thread-4 (]: On test.covid_pipeline.assert_case_month_after_2020: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Custom test: all case records must be from 2020 or later.
+-- COVID-19 did not exist before 2020 — earlier dates indicate bad data.
+-- Returns rows that FAIL the test (dbt expects 0 rows for a passing test).
+
+select
+    state_fips,
+    case_month,
+    total_cases
+from COVID_DB.INTERMEDIATE.int_cases_with_population
+where case_month < '2020-01-01'
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.assert_case_month_after_2020"} */
+[0m06:46:36.642405 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.assert_cases_per_100k_not_negative"
+[0m06:46:36.643199 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c
+[0m06:46:36.644063 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m06:46:36.645016 [debug] [Thread-5 (]: On test.covid_pipeline.assert_cases_per_100k_not_negative: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Custom test: cases_per_100k should never be negative.
+-- A negative value would indicate a data error in case counts or population.
+-- Returns rows that FAIL the test (dbt expects 0 rows for a passing test).
+
+select
+    county_fips,
+    county_name,
+    case_month,
+    cases_per_100k
+from COVID_DB.MARTS.mart_cases_per_100k
+where cases_per_100k < 0
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.assert_cases_per_100k_not_negative"} */
+[0m06:46:36.649350 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c"
+[0m06:46:36.650882 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.assert_case_fatality_rate_in_range"
+[0m06:46:36.651712 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m06:46:36.653344 [debug] [Thread-3 (]: On test.covid_pipeline.assert_case_fatality_rate_in_range: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Custom test: case fatality rate must be between 0% and 100%.
+-- Values outside this range indicate bad case or death counts.
+-- Returns rows that FAIL the test (dbt expects 0 rows for a passing test).
+
+select
+    state_fips,
+    case_month,
+    total_cases,
+    total_deaths,
+    case_fatality_rate_pct
+from COVID_DB.MARTS.mart_case_fatality_rate
+where case_fatality_rate_pct < 0
+   or case_fatality_rate_pct > 100
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.assert_case_fatality_rate_in_range"} */
+[0m06:46:36.654561 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m06:46:36.655909 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c"
+[0m06:46:36.657570 [debug] [Thread-2 (]: On test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        freshness_status as value_field,
+        count(*) as n_records
+
+    from COVID_DB.MARTS.mart_data_freshness
+    group by freshness_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Fresh','Recent','Stale','Very Stale'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c"} */
+[0m06:46:36.659231 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m06:46:37.317159 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.658 seconds
+[0m06:46:37.327161 [info ] [Thread-2 (]: 1 of 26 PASS accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale  [[32mPASS[0m in 0.78s]
+[0m06:46:37.328329 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c
+[0m06:46:37.328816 [debug] [Thread-2 (]: Began running node test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94
+[0m06:46:37.329263 [info ] [Thread-2 (]: 5 of 26 START test not_null_mart_case_fatality_rate_case_fatality_rate_pct ..... [RUN]
+[0m06:46:37.330047 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.accepted_values_mart_data_freshness_freshness_status__Fresh__Recent__Stale__Very_Stale.a93cf2ba0c, now test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94)
+[0m06:46:37.330498 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94
+[0m06:46:37.337704 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94"
+[0m06:46:37.339394 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.688 seconds
+[0m06:46:37.341582 [info ] [Thread-5 (]: 4 of 26 PASS assert_cases_per_100k_not_negative ................................ [[32mPASS[0m in 0.81s]
+[0m06:46:37.342487 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94
+[0m06:46:37.343271 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.assert_cases_per_100k_not_negative
+[0m06:46:37.346729 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94"
+[0m06:46:37.347411 [debug] [Thread-5 (]: Began running node test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51
+[0m06:46:37.348230 [info ] [Thread-5 (]: 6 of 26 START test not_null_mart_case_fatality_rate_case_month ................. [RUN]
+[0m06:46:37.349062 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.assert_cases_per_100k_not_negative, now test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51)
+[0m06:46:37.349697 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51
+[0m06:46:37.355957 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51"
+[0m06:46:37.357427 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94"
+[0m06:46:37.358004 [debug] [Thread-2 (]: On test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select case_fatality_rate_pct
+from COVID_DB.MARTS.mart_case_fatality_rate
+where case_fatality_rate_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94"} */
+[0m06:46:37.359737 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51
+[0m06:46:37.363006 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51"
+[0m06:46:37.364801 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51"
+[0m06:46:37.365387 [debug] [Thread-5 (]: On test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select case_month
+from COVID_DB.MARTS.mart_case_fatality_rate
+where case_month is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51"} */
+[0m06:46:37.458170 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.804 seconds
+[0m06:46:37.460307 [info ] [Thread-3 (]: 2 of 26 PASS assert_case_fatality_rate_in_range ................................ [[32mPASS[0m in 0.92s]
+[0m06:46:37.461570 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.assert_case_fatality_rate_in_range
+[0m06:46:37.462302 [debug] [Thread-3 (]: Began running node test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6
+[0m06:46:37.462985 [info ] [Thread-3 (]: 7 of 26 START test not_null_mart_case_fatality_rate_state_fips ................. [RUN]
+[0m06:46:37.463838 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.assert_case_fatality_rate_in_range, now test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6)
+[0m06:46:37.464295 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6
+[0m06:46:37.468335 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6"
+[0m06:46:37.469662 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6
+[0m06:46:37.474263 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6"
+[0m06:46:37.475870 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6"
+[0m06:46:37.476416 [debug] [Thread-3 (]: On test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select state_fips
+from COVID_DB.MARTS.mart_case_fatality_rate
+where state_fips is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6"} */
+[0m06:46:37.548489 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.182 seconds
+[0m06:46:37.550703 [info ] [Thread-5 (]: 6 of 26 PASS not_null_mart_case_fatality_rate_case_month ....................... [[32mPASS[0m in 0.20s]
+[0m06:46:37.551994 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51
+[0m06:46:37.552727 [debug] [Thread-5 (]: Began running node test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da
+[0m06:46:37.553430 [info ] [Thread-5 (]: 8 of 26 START test not_null_mart_cases_per_100k_case_month ..................... [RUN]
+[0m06:46:37.554583 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_case_fatality_rate_case_month.9ed9496d51, now test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da)
+[0m06:46:37.555267 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da
+[0m06:46:37.559991 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da"
+[0m06:46:37.561286 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da
+[0m06:46:37.564673 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da"
+[0m06:46:37.566375 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.208 seconds
+[0m06:46:37.568486 [info ] [Thread-2 (]: 5 of 26 PASS not_null_mart_case_fatality_rate_case_fatality_rate_pct ........... [[32mPASS[0m in 0.24s]
+[0m06:46:37.570765 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da"
+[0m06:46:37.569692 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94
+[0m06:46:37.571720 [debug] [Thread-5 (]: On test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select case_month
+from COVID_DB.MARTS.mart_cases_per_100k
+where case_month is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da"} */
+[0m06:46:37.572325 [debug] [Thread-2 (]: Began running node test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a
+[0m06:46:37.573960 [info ] [Thread-2 (]: 9 of 26 START test not_null_mart_cases_per_100k_cases_per_100k ................. [RUN]
+[0m06:46:37.575138 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_case_fatality_rate_case_fatality_rate_pct.a4f0405f94, now test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a)
+[0m06:46:37.575812 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a
+[0m06:46:37.580306 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a"
+[0m06:46:37.581870 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a
+[0m06:46:37.584924 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a"
+[0m06:46:37.586241 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a"
+[0m06:46:37.586744 [debug] [Thread-2 (]: On test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cases_per_100k
+from COVID_DB.MARTS.mart_cases_per_100k
+where cases_per_100k is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a"} */
+[0m06:46:37.669175 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.192 seconds
+[0m06:46:37.671555 [info ] [Thread-3 (]: 7 of 26 PASS not_null_mart_case_fatality_rate_state_fips ....................... [[32mPASS[0m in 0.21s]
+[0m06:46:37.672788 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6
+[0m06:46:37.673346 [debug] [Thread-3 (]: Began running node test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509
+[0m06:46:37.673842 [info ] [Thread-3 (]: 10 of 26 START test not_null_mart_cases_per_100k_county_fips ................... [RUN]
+[0m06:46:37.674736 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_case_fatality_rate_state_fips.ff74c298a6, now test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509)
+[0m06:46:37.675221 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509
+[0m06:46:37.679285 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509"
+[0m06:46:37.680303 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509
+[0m06:46:37.683165 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509"
+[0m06:46:37.684496 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509"
+[0m06:46:37.684988 [debug] [Thread-3 (]: On test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select county_fips
+from COVID_DB.MARTS.mart_cases_per_100k
+where county_fips is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509"} */
+[0m06:46:37.730471 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.157 seconds
+[0m06:46:37.732627 [info ] [Thread-5 (]: 8 of 26 PASS not_null_mart_cases_per_100k_case_month ........................... [[32mPASS[0m in 0.18s]
+[0m06:46:37.733684 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da
+[0m06:46:37.734185 [debug] [Thread-5 (]: Began running node test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c
+[0m06:46:37.734638 [info ] [Thread-5 (]: 11 of 26 START test not_null_mart_data_freshness_freshness_status .............. [RUN]
+[0m06:46:37.735391 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_cases_per_100k_case_month.4773fb69da, now test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c)
+[0m06:46:37.735864 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c
+[0m06:46:37.741287 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c"
+[0m06:46:37.742406 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c
+[0m06:46:37.745197 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c"
+[0m06:46:37.746713 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c"
+[0m06:46:37.747276 [debug] [Thread-5 (]: On test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select freshness_status
+from COVID_DB.MARTS.mart_data_freshness
+where freshness_status is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c"} */
+[0m06:46:37.787630 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.200 seconds
+[0m06:46:37.790697 [info ] [Thread-2 (]: 9 of 26 PASS not_null_mart_cases_per_100k_cases_per_100k ....................... [[32mPASS[0m in 0.22s]
+[0m06:46:37.792359 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a
+[0m06:46:37.793223 [debug] [Thread-2 (]: Began running node test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6
+[0m06:46:37.793994 [info ] [Thread-2 (]: 12 of 26 START test not_null_mart_data_freshness_source_table .................. [RUN]
+[0m06:46:37.795045 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_cases_per_100k_cases_per_100k.7e883eee3a, now test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6)
+[0m06:46:37.795553 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6
+[0m06:46:37.800029 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6"
+[0m06:46:37.801068 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6
+[0m06:46:37.803569 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6"
+[0m06:46:37.804908 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6"
+[0m06:46:37.805522 [debug] [Thread-2 (]: On test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_table
+from COVID_DB.MARTS.mart_data_freshness
+where source_table is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6"} */
+[0m06:46:37.924526 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.239 seconds
+[0m06:46:37.926582 [info ] [Thread-3 (]: 10 of 26 PASS not_null_mart_cases_per_100k_county_fips ......................... [[32mPASS[0m in 0.25s]
+[0m06:46:37.927832 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509
+[0m06:46:37.928546 [debug] [Thread-3 (]: Began running node test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda
+[0m06:46:37.929215 [info ] [Thread-3 (]: 13 of 26 START test not_null_mart_hospitalization_rate_case_month .............. [RUN]
+[0m06:46:37.930319 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_cases_per_100k_county_fips.f6c5500509, now test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda)
+[0m06:46:37.930774 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda
+[0m06:46:37.939277 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda"
+[0m06:46:37.940685 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.297 seconds
+[0m06:46:37.943195 [info ] [Thread-4 (]: 3 of 26 PASS assert_case_month_after_2020 ...................................... [[32mPASS[0m in 1.41s]
+[0m06:46:37.944255 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda
+[0m06:46:37.945186 [debug] [Thread-4 (]: Finished running node test.covid_pipeline.assert_case_month_after_2020
+[0m06:46:37.949700 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda"
+[0m06:46:37.950678 [debug] [Thread-4 (]: Began running node test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a
+[0m06:46:37.951814 [info ] [Thread-4 (]: 14 of 26 START test not_null_mart_hospitalization_rate_hospitalization_rate_pct  [RUN]
+[0m06:46:37.953395 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.assert_case_month_after_2020, now test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a)
+[0m06:46:37.954344 [debug] [Thread-4 (]: Began compiling node test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a
+[0m06:46:37.955948 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda"
+[0m06:46:37.963737 [debug] [Thread-4 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a"
+[0m06:46:37.964664 [debug] [Thread-3 (]: On test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select case_month
+from COVID_DB.MARTS.mart_hospitalization_rate
+where case_month is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda"} */
+[0m06:46:37.967583 [debug] [Thread-4 (]: Began executing node test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a
+[0m06:46:37.972174 [debug] [Thread-4 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a"
+[0m06:46:37.974907 [debug] [Thread-4 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a"
+[0m06:46:37.975897 [debug] [Thread-4 (]: On test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select hospitalization_rate_pct
+from COVID_DB.MARTS.mart_hospitalization_rate
+where hospitalization_rate_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a"} */
+[0m06:46:38.023487 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.276 seconds
+[0m06:46:38.025944 [info ] [Thread-5 (]: 11 of 26 PASS not_null_mart_data_freshness_freshness_status .................... [[32mPASS[0m in 0.29s]
+[0m06:46:38.027378 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c
+[0m06:46:38.028196 [debug] [Thread-5 (]: Began running node test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483
+[0m06:46:38.029015 [info ] [Thread-5 (]: 15 of 26 START test not_null_mart_hospitalization_rate_state_fips .............. [RUN]
+[0m06:46:38.029958 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_data_freshness_freshness_status.d73145837c, now test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483)
+[0m06:46:38.030756 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483
+[0m06:46:38.038302 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483"
+[0m06:46:38.040162 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483
+[0m06:46:38.043311 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483"
+[0m06:46:38.044779 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483"
+[0m06:46:38.045342 [debug] [Thread-5 (]: On test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select state_fips
+from COVID_DB.MARTS.mart_hospitalization_rate
+where state_fips is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483"} */
+[0m06:46:38.063367 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.257 seconds
+[0m06:46:38.065829 [info ] [Thread-2 (]: 12 of 26 PASS not_null_mart_data_freshness_source_table ........................ [[32mPASS[0m in 0.27s]
+[0m06:46:38.066931 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6
+[0m06:46:38.067466 [debug] [Thread-2 (]: Began running node test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2
+[0m06:46:38.068087 [info ] [Thread-2 (]: 16 of 26 START test not_null_mart_hospitalization_rate_total_cases ............. [RUN]
+[0m06:46:38.068968 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_data_freshness_source_table.2fc2ee7ce6, now test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2)
+[0m06:46:38.069485 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2
+[0m06:46:38.075782 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2"
+[0m06:46:38.077923 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2
+[0m06:46:38.082692 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2"
+[0m06:46:38.084964 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2"
+[0m06:46:38.085818 [debug] [Thread-2 (]: On test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_cases
+from COVID_DB.MARTS.mart_hospitalization_rate
+where total_cases is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2"} */
+[0m06:46:38.166688 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.201 seconds
+[0m06:46:38.169199 [info ] [Thread-3 (]: 13 of 26 PASS not_null_mart_hospitalization_rate_case_month .................... [[32mPASS[0m in 0.24s]
+[0m06:46:38.171923 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.126 seconds
+[0m06:46:38.173082 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda
+[0m06:46:38.173746 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.194 seconds
+[0m06:46:38.176746 [debug] [Thread-3 (]: Began running node test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc
+[0m06:46:38.176147 [info ] [Thread-5 (]: 15 of 26 PASS not_null_mart_hospitalization_rate_state_fips .................... [[32mPASS[0m in 0.15s]
+[0m06:46:38.181886 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483
+[0m06:46:38.182431 [debug] [Thread-5 (]: Began running node test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37
+[0m06:46:38.179971 [info ] [Thread-4 (]: 14 of 26 PASS not_null_mart_hospitalization_rate_hospitalization_rate_pct ...... [[32mPASS[0m in 0.23s]
+[0m06:46:38.183908 [debug] [Thread-4 (]: Finished running node test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a
+[0m06:46:38.184481 [debug] [Thread-4 (]: Began running node test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df
+[0m06:46:38.180998 [info ] [Thread-3 (]: 17 of 26 START test not_null_mart_rolling_avg_cases_case_month ................. [RUN]
+[0m06:46:38.186050 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_hospitalization_rate_case_month.bd81e0cdda, now test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc)
+[0m06:46:38.186586 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc
+[0m06:46:38.192566 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc"
+[0m06:46:38.183045 [info ] [Thread-5 (]: 18 of 26 START test not_null_mart_rolling_avg_cases_monthly_cases .............. [RUN]
+[0m06:46:38.194054 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_hospitalization_rate_state_fips.32b9524483, now test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37)
+[0m06:46:38.185105 [info ] [Thread-4 (]: 19 of 26 START test not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases ...... [RUN]
+[0m06:46:38.195142 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37
+[0m06:46:38.195943 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_hospitalization_rate_hospitalization_rate_pct.c2e3edbe7a, now test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df)
+[0m06:46:38.200469 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37"
+[0m06:46:38.201148 [debug] [Thread-4 (]: Began compiling node test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df
+[0m06:46:38.201858 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc
+[0m06:46:38.207125 [debug] [Thread-4 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df"
+[0m06:46:38.211105 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc"
+[0m06:46:38.212389 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37
+[0m06:46:38.217022 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37"
+[0m06:46:38.217595 [debug] [Thread-4 (]: Began executing node test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df
+[0m06:46:38.220377 [debug] [Thread-4 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df"
+[0m06:46:38.221454 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc"
+[0m06:46:38.221990 [debug] [Thread-3 (]: On test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select case_month
+from COVID_DB.MARTS.mart_rolling_avg_cases
+where case_month is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc"} */
+[0m06:46:38.226306 [debug] [Thread-4 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df"
+[0m06:46:38.227348 [debug] [Thread-4 (]: On test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select rolling_3mo_avg_cases
+from COVID_DB.MARTS.mart_rolling_avg_cases
+where rolling_3mo_avg_cases is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df"} */
+[0m06:46:38.228302 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37"
+[0m06:46:38.230053 [debug] [Thread-5 (]: On test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select monthly_cases
+from COVID_DB.MARTS.mart_rolling_avg_cases
+where monthly_cases is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37"} */
+[0m06:46:38.262373 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.176 seconds
+[0m06:46:38.264701 [info ] [Thread-2 (]: 16 of 26 PASS not_null_mart_hospitalization_rate_total_cases ................... [[32mPASS[0m in 0.20s]
+[0m06:46:38.265804 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2
+[0m06:46:38.266349 [debug] [Thread-2 (]: Began running node test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb
+[0m06:46:38.266851 [info ] [Thread-2 (]: 20 of 26 START test not_null_mart_rolling_avg_cases_state_fips ................. [RUN]
+[0m06:46:38.267648 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_hospitalization_rate_total_cases.9667a988a2, now test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb)
+[0m06:46:38.268141 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb
+[0m06:46:38.273604 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb"
+[0m06:46:38.274818 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb
+[0m06:46:38.277581 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb"
+[0m06:46:38.279018 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb"
+[0m06:46:38.279562 [debug] [Thread-2 (]: On test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select state_fips
+from COVID_DB.MARTS.mart_rolling_avg_cases
+where state_fips is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb"} */
+[0m06:46:38.425467 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.197 seconds
+[0m06:46:38.427742 [info ] [Thread-4 (]: 19 of 26 PASS not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases ............ [[32mPASS[0m in 0.23s]
+[0m06:46:38.428836 [debug] [Thread-4 (]: Finished running node test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df
+[0m06:46:38.429331 [debug] [Thread-4 (]: Began running node test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577
+[0m06:46:38.429795 [info ] [Thread-4 (]: 21 of 26 START test not_null_mart_severity_index_county_fips ................... [RUN]
+[0m06:46:38.430545 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_rolling_avg_cases_rolling_3mo_avg_cases.0af87146df, now test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577)
+[0m06:46:38.431003 [debug] [Thread-4 (]: Began compiling node test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577
+[0m06:46:38.435830 [debug] [Thread-4 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577"
+[0m06:46:38.436983 [debug] [Thread-4 (]: Began executing node test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577
+[0m06:46:38.440143 [debug] [Thread-4 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577"
+[0m06:46:38.442271 [debug] [Thread-4 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577"
+[0m06:46:38.443131 [debug] [Thread-4 (]: On test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select county_fips
+from COVID_DB.MARTS.mart_severity_index
+where county_fips is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577"} */
+[0m06:46:38.450072 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.227 seconds
+[0m06:46:38.452244 [info ] [Thread-3 (]: 17 of 26 PASS not_null_mart_rolling_avg_cases_case_month ....................... [[32mPASS[0m in 0.27s]
+[0m06:46:38.453325 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc
+[0m06:46:38.453890 [debug] [Thread-3 (]: Began running node test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01
+[0m06:46:38.454371 [info ] [Thread-3 (]: 22 of 26 START test not_null_mart_severity_index_severity_index ................ [RUN]
+[0m06:46:38.455272 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_rolling_avg_cases_case_month.6480b6c0cc, now test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01)
+[0m06:46:38.455861 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01
+[0m06:46:38.461550 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01"
+[0m06:46:38.462674 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01
+[0m06:46:38.465206 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01"
+[0m06:46:38.466499 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01"
+[0m06:46:38.467005 [debug] [Thread-3 (]: On test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select severity_index
+from COVID_DB.MARTS.mart_severity_index
+where severity_index is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01"} */
+[0m06:46:38.469728 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.239 seconds
+[0m06:46:38.471882 [info ] [Thread-5 (]: 18 of 26 PASS not_null_mart_rolling_avg_cases_monthly_cases .................... [[32mPASS[0m in 0.28s]
+[0m06:46:38.473430 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37
+[0m06:46:38.474349 [debug] [Thread-5 (]: Began running node test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6
+[0m06:46:38.475258 [info ] [Thread-5 (]: 23 of 26 START test not_null_mart_vaccination_vs_cases_county_fips ............. [RUN]
+[0m06:46:38.476125 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_rolling_avg_cases_monthly_cases.76aa447b37, now test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6)
+[0m06:46:38.476607 [debug] [Thread-5 (]: Began compiling node test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6
+[0m06:46:38.481375 [debug] [Thread-5 (]: Writing injected SQL for node "test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6"
+[0m06:46:38.482462 [debug] [Thread-5 (]: Began executing node test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6
+[0m06:46:38.485029 [debug] [Thread-5 (]: Writing runtime sql for node "test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6"
+[0m06:46:38.486345 [debug] [Thread-5 (]: Using snowflake connection "test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6"
+[0m06:46:38.486851 [debug] [Thread-5 (]: On test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select county_fips
+from COVID_DB.MARTS.mart_vaccination_vs_cases
+where county_fips is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6"} */
+[0m06:46:38.504182 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.224 seconds
+[0m06:46:38.506621 [info ] [Thread-2 (]: 20 of 26 PASS not_null_mart_rolling_avg_cases_state_fips ....................... [[32mPASS[0m in 0.24s]
+[0m06:46:38.508108 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb
+[0m06:46:38.509209 [debug] [Thread-2 (]: Began running node test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4
+[0m06:46:38.510690 [info ] [Thread-2 (]: 24 of 26 START test unique_mart_data_freshness_source_table .................... [RUN]
+[0m06:46:38.511818 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_rolling_avg_cases_state_fips.8e09741ccb, now test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4)
+[0m06:46:38.512441 [debug] [Thread-2 (]: Began compiling node test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4
+[0m06:46:38.519873 [debug] [Thread-2 (]: Writing injected SQL for node "test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4"
+[0m06:46:38.520986 [debug] [Thread-2 (]: Began executing node test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4
+[0m06:46:38.523853 [debug] [Thread-2 (]: Writing runtime sql for node "test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4"
+[0m06:46:38.526174 [debug] [Thread-2 (]: Using snowflake connection "test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4"
+[0m06:46:38.527007 [debug] [Thread-2 (]: On test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    source_table as unique_field,
+    count(*) as n_records
+
+from COVID_DB.MARTS.mart_data_freshness
+where source_table is not null
+group by source_table
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4"} */
+[0m06:46:38.709015 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.265 seconds
+[0m06:46:38.712430 [info ] [Thread-4 (]: 21 of 26 PASS not_null_mart_severity_index_county_fips ......................... [[32mPASS[0m in 0.28s]
+[0m06:46:38.714321 [debug] [Thread-4 (]: Finished running node test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577
+[0m06:46:38.715272 [debug] [Thread-4 (]: Began running node test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2
+[0m06:46:38.717130 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.250 seconds
+[0m06:46:38.716024 [info ] [Thread-4 (]: 25 of 26 START test unique_mart_severity_index_county_fips ..................... [RUN]
+[0m06:46:38.721472 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_severity_index_county_fips.a1e81f5577, now test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2)
+[0m06:46:38.720599 [info ] [Thread-3 (]: 22 of 26 PASS not_null_mart_severity_index_severity_index ...................... [[32mPASS[0m in 0.27s]
+[0m06:46:38.722934 [debug] [Thread-4 (]: Began compiling node test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2
+[0m06:46:38.724209 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01
+[0m06:46:38.730004 [debug] [Thread-4 (]: Writing injected SQL for node "test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2"
+[0m06:46:38.730679 [debug] [Thread-3 (]: Began running node test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db
+[0m06:46:38.731435 [info ] [Thread-3 (]: 26 of 26 START test unique_mart_vaccination_vs_cases_county_fips ............... [RUN]
+[0m06:46:38.732304 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.covid_pipeline.not_null_mart_severity_index_severity_index.4d29796c01, now test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db)
+[0m06:46:38.732804 [debug] [Thread-3 (]: Began compiling node test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db
+[0m06:46:38.737216 [debug] [Thread-3 (]: Writing injected SQL for node "test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db"
+[0m06:46:38.738112 [debug] [Thread-4 (]: Began executing node test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2
+[0m06:46:38.742193 [debug] [Thread-4 (]: Writing runtime sql for node "test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2"
+[0m06:46:38.743684 [debug] [Thread-3 (]: Began executing node test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db
+[0m06:46:38.746616 [debug] [Thread-3 (]: Writing runtime sql for node "test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db"
+[0m06:46:38.747936 [debug] [Thread-4 (]: Using snowflake connection "test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2"
+[0m06:46:38.748482 [debug] [Thread-4 (]: On test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    county_fips as unique_field,
+    count(*) as n_records
+
+from COVID_DB.MARTS.mart_severity_index
+where county_fips is not null
+group by county_fips
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2"} */
+[0m06:46:38.751438 [debug] [Thread-3 (]: Using snowflake connection "test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db"
+[0m06:46:38.752014 [debug] [Thread-3 (]: On test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    county_fips as unique_field,
+    count(*) as n_records
+
+from COVID_DB.MARTS.mart_vaccination_vs_cases
+where county_fips is not null
+group by county_fips
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.11.7", "profile_name": "covid_pipeline", "target_name": "dev", "node_id": "test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db"} */
+[0m06:46:38.925296 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.398 seconds
+[0m06:46:38.935054 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.448 seconds
+[0m06:46:38.951695 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.199 seconds
+[0m06:46:38.928964 [info ] [Thread-2 (]: 24 of 26 PASS unique_mart_data_freshness_source_table .......................... [[32mPASS[0m in 0.42s]
+[0m06:46:38.957097 [debug] [Thread-2 (]: Finished running node test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4
+[0m06:46:38.938724 [info ] [Thread-5 (]: 23 of 26 PASS not_null_mart_vaccination_vs_cases_county_fips ................... [[32mPASS[0m in 0.46s]
+[0m06:46:38.969498 [debug] [Thread-5 (]: Finished running node test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6
+[0m06:46:38.973876 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.225 seconds
+[0m06:46:38.955551 [warn ] [Thread-3 (]: 26 of 26 WARN 3211 unique_mart_vaccination_vs_cases_county_fips ................ [[33mWARN 3211[0m in 0.22s]
+[0m06:46:38.979865 [debug] [Thread-3 (]: Finished running node test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db
+[0m06:46:38.978166 [info ] [Thread-4 (]: 25 of 26 PASS unique_mart_severity_index_county_fips ........................... [[32mPASS[0m in 0.26s]
+[0m06:46:38.992447 [debug] [Thread-4 (]: Finished running node test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2
+[0m06:46:38.995290 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:46:38.996224 [debug] [MainThread]: Connection 'list_COVID_DB_INTERMEDIATE' was left open.
+[0m06:46:38.997341 [debug] [MainThread]: On list_COVID_DB_INTERMEDIATE: Close
+[0m06:46:39.102760 [debug] [MainThread]: Connection 'list_COVID_DB_MARTS' was left open.
+[0m06:46:39.103629 [debug] [MainThread]: On list_COVID_DB_MARTS: Close
+[0m06:46:39.243593 [debug] [MainThread]: Connection 'list_COVID_DB_STAGING' was left open.
+[0m06:46:39.244177 [debug] [MainThread]: On list_COVID_DB_STAGING: Close
+[0m06:46:39.352221 [debug] [MainThread]: Connection 'test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2' was left open.
+[0m06:46:39.352773 [debug] [MainThread]: On test.covid_pipeline.unique_mart_severity_index_county_fips.a529dba7d2: Close
+[0m06:46:39.474976 [debug] [MainThread]: Connection 'test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6' was left open.
+[0m06:46:39.475537 [debug] [MainThread]: On test.covid_pipeline.not_null_mart_vaccination_vs_cases_county_fips.407223a3c6: Close
+[0m06:46:39.577197 [debug] [MainThread]: Connection 'test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db' was left open.
+[0m06:46:39.577734 [debug] [MainThread]: On test.covid_pipeline.unique_mart_vaccination_vs_cases_county_fips.114454f6db: Close
+[0m06:46:39.681310 [debug] [MainThread]: Connection 'test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4' was left open.
+[0m06:46:39.681852 [debug] [MainThread]: On test.covid_pipeline.unique_mart_data_freshness_source_table.d8eb64dde4: Close
+[0m06:46:39.799541 [info ] [MainThread]: 
+[0m06:46:39.800595 [info ] [MainThread]: Finished running 26 data tests in 0 hours 0 minutes and 4.38 seconds (4.38s).
+[0m06:46:39.807653 [debug] [MainThread]: Command end result
+[0m06:46:39.857123 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\manifest.json
+[0m06:46:39.861239 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\semantic_manifest.json
+[0m06:46:39.871585 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Admin\workspace\DE_2025\Project3_Covid19_JW\covid_19\target\run_results.json
+[0m06:46:39.872120 [info ] [MainThread]: 
+[0m06:46:39.873253 [info ] [MainThread]: [33mCompleted with 1 warning:[0m
+[0m06:46:39.874132 [info ] [MainThread]: 
+[0m06:46:39.874921 [warn ] [MainThread]: [33mWarning in test unique_mart_vaccination_vs_cases_county_fips (models\marts\schema.yml)[0m
+[0m06:46:39.875677 [warn ] [MainThread]: Got 3211 results, configured to warn if != 0
+[0m06:46:39.876363 [info ] [MainThread]: 
+[0m06:46:39.877116 [info ] [MainThread]:   compiled code at target\compiled\covid_pipeline\models\marts\schema.yml\unique_mart_vaccination_vs_cases_county_fips.sql
+[0m06:46:39.877774 [info ] [MainThread]: 
+[0m06:46:39.878424 [info ] [MainThread]: Done. PASS=25 WARN=1 ERROR=0 SKIP=0 NO-OP=0 TOTAL=26
+[0m06:46:39.880433 [debug] [MainThread]: Command `dbt test` succeeded at 06:46:39.880211 after 7.42 seconds
+[0m06:46:39.881021 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002073F54CB90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020754CABCD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020754CAB6A0>]}
+[0m06:46:39.881554 [debug] [MainThread]: Flushing usage events
+[0m06:46:40.075769 [debug] [MainThread]: An error was encountered while trying to flush usage events

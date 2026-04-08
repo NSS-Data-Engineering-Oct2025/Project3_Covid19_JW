@@ -18,6 +18,7 @@ def get_connection() -> snowflake.connector.SnowflakeConnection:
         database=sf_config.database,
         schema=sf_config.raw_schema,
         role=sf_config.role,
+        client_session_keep_alive=True,  # prevents token expiry on long ingestion runs
         session_parameters={"QUERY_TAG": "covid_pipeline"},
     )
 

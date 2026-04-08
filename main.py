@@ -15,11 +15,11 @@ DBT_DIR = ROOT_DIR / "covid_19"
 
 def _check_prerequisites() -> None:
     """Fail fast if required environment variables are missing."""
-    from src.config import census, sf_config
+    from src.config import census, snowflake
     if not (census.api_key or "").strip():
         logger.error("CENSUS_API_KEY is not set — cannot retrieve population data.")
         sys.exit(1)
-    if not (sf_config.account or "").strip():
+    if not (snowflake.account or "").strip():
         logger.error("SNOWFLAKE_ACCOUNT is not set — cannot connect to Snowflake.")
         sys.exit(1)
     logger.info("Prerequisites check passed.")
