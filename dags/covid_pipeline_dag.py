@@ -10,7 +10,7 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
 # Path where dbt project lives — adjust if you move the repo
-DBT_PROJECT_DIR = "/path/to/Project3_Covid19_JW/dbt_project"
+DBT_PROJECT_DIR = "/path/to/Project3_Covid19_JW/covid_19"
 DBT_PROFILES_DIR = "~/.dbt"
 
 default_args = {

@@ -10,7 +10,19 @@ from pathlib import Path
 from loguru import logger
 
 ROOT_DIR = Path(__file__).parent
-DBT_DIR = ROOT_DIR / "dbt_project"
+DBT_DIR = ROOT_DIR / "covid_19"
+
+
+def _check_prerequisites() -> None:
+    """Fail fast if required environment variables are missing."""
+    from src.config import census, sf_config
+    if not (census.api_key or "").strip():
+        logger.error("CENSUS_API_KEY is not set — cannot retrieve population data.")
+        sys.exit(1)
+    if not (sf_config.account or "").strip():
+        logger.error("SNOWFLAKE_ACCOUNT is not set — cannot connect to Snowflake.")
+        sys.exit(1)
+    logger.info("Prerequisites check passed.")
 
 
 def run_ingestion() -> dict:
@@ -50,10 +62,14 @@ def run_transformations() -> bool:
     logger.info("STEP 2 — dbt Transformations")
     logger.info("=" * 50)
 
+    # Tests run after each layer — catches issues earlier in the pipeline
     steps = [
-        ("run --select staging",      "Staging models"),
-        ("run --select intermediate", "Intermediate models"),
-        ("run --select marts",        "Mart models"),
+        ("run --select staging",       "Staging models"),
+        ("test --select staging+",     "Staging tests"),
+        ("run --select intermediate",  "Intermediate models"),
+        ("test --select intermediate+","Intermediate tests"),
+        ("run --select marts",         "Mart models"),
+        ("test --select marts+",       "Mart tests"),
     ]
 
     for command, label in steps:
@@ -67,7 +83,7 @@ def run_transformations() -> bool:
 
 def run_tests() -> bool:
     logger.info("=" * 50)
-    logger.info("STEP 3 — dbt Tests")
+    logger.info("STEP 3 — Full dbt Test Suite")
     logger.info("=" * 50)
     return run_dbt("test")
 
@@ -91,6 +107,7 @@ def print_summary(ingestion_results: dict, dbt_success: bool, tests_success: boo
 
 def main():
     logger.info("Starting COVID-19 pipeline")
+    _check_prerequisites()
 
     ingestion_results = run_ingestion()
     dbt_success = run_transformations()

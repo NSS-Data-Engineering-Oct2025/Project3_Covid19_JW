@@ -1,0 +1,25 @@
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select cases_per_100k
+from COVID_DB.MARTS.mart_cases_per_100k
+where cases_per_100k is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
