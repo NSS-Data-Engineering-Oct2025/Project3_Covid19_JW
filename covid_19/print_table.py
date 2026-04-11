@@ -70,4 +70,4 @@ else:
     tables_df = truncated_df.copy()
 
 # Print formattded table
-print(tabulate(tables_df, headers="keys", tablefmt="fancy_grid"))
+print(tabulate(tables_df, headers="keys", tablefmt="fancy_grid")) 

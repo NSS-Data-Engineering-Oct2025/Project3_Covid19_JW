@@ -4,8 +4,8 @@
 
 with cases as (
     select
-        county_fips,
-        state_fips,
+        county_fips,  -- FIPS: Federal Information Processing Standards code
+        state_fips,   -- FIPS: Federal Information Processing Standards code
         case_month,
         count(*)              as total_cases,
         sum(is_death)         as total_deaths,

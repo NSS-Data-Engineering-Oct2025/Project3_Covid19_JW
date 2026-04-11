@@ -75,7 +75,12 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
+# to manually run pipeline in terminal
 # (cd covid_19)
 # (dbt run)
 # (uv run python main.py)
-# to manually run pipeline in terminal
+
+
+# to run streamlit app in terminal
+# (cd streamlit)
+# (uv run streamlit run app.py)
