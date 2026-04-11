@@ -12,9 +12,9 @@ __pycache__/
 uv.lock
 
 # dbt
-dbt_project/target/
-dbt_project/dbt_packages/
-dbt_project/logs/
+target/
+dbt_packages/
+logs/
 profiles.yml
 
 # Airflow
