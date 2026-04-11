@@ -8,42 +8,33 @@
 -- Weights reflect that ICU burden and hospitalization are the strongest signals
 -- of healthcare system stress, while CFR can lag due to reporting delays.
 
-with cases_agg as (
+with base as (
     select
         county_fips,
         state_fips,
         county_name,
         sum(total_cases)            as total_cases,
         sum(total_hospitalizations) as total_hospitalizations,
+        sum(total_icu)              as total_icu_cases,
         sum(total_deaths)           as total_deaths
     from {{ ref('int_cases_with_population') }}
     where total_cases > 0
     group by 1, 2, 3
 ),
 
-icu_agg as (
+with_rates as (
     select
         county_fips,
-        sum(is_icu) as total_icu_cases
-    from {{ ref('stg_covid_cases') }}
-    group by 1
-),
-
-joined as (
-    select
-        c.county_fips,
-        c.state_fips,
-        c.county_name,
-        c.total_cases,
-        c.total_hospitalizations,
-        c.total_deaths,
-        coalesce(i.total_icu_cases, 0) as total_icu_cases,
-
-        round(100.0 * c.total_hospitalizations / nullif(c.total_cases, 0), 4) as hosp_rate_pct,
-        round(100.0 * i.total_icu_cases        / nullif(c.total_cases, 0), 4) as icu_rate_pct,
-        round(100.0 * c.total_deaths           / nullif(c.total_cases, 0), 4) as cfr_pct
-    from cases_agg c
-    left join icu_agg i on c.county_fips = i.county_fips
+        state_fips,
+        county_name,
+        total_cases,
+        total_hospitalizations,
+        total_icu_cases,
+        total_deaths,
+        round(100.0 * total_hospitalizations / nullif(total_cases, 0), 4) as hosp_rate_pct,
+        round(100.0 * total_icu_cases        / nullif(total_cases, 0), 4) as icu_rate_pct,
+        round(100.0 * total_deaths           / nullif(total_cases, 0), 4) as cfr_pct
+    from base
 ),
 
 with_index as (
@@ -55,7 +46,7 @@ with_index as (
             + (coalesce(cfr_pct, 0) * 0.2),
             4
         ) as severity_index
-    from joined
+    from with_rates
 )
 
 select * from with_index

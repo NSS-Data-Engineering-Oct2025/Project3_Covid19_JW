@@ -52,7 +52,8 @@ def load_dataframe(
         full_table = f"{sf_config.database}.{schema}.{table}"
 
         if if_exists == "replace":
-            conn.cursor().execute(f"TRUNCATE TABLE IF EXISTS {full_table}")
+            with conn.cursor() as cur:
+                cur.execute(f"TRUNCATE TABLE IF EXISTS {full_table}")
 
         success, nchunks, nrows, _ = snowflake.connector.pandas_tools.write_pandas(
             conn=conn,

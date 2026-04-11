@@ -50,6 +50,22 @@ page = st.sidebar.radio(
 )
 
 st.sidebar.divider()
+
+# State filter — used by CFR and Hospitalization Rate metrics
+all_states = query("""
+    SELECT DISTINCT state_fips
+    FROM COVID_DB.MARTS.MART_CASE_FATALITY_RATE
+    ORDER BY state_fips
+""")["STATE_FIPS"].tolist()
+
+selected_states = st.sidebar.multiselect(
+    "Filter by State (FIPS)",
+    options=all_states,
+    default=[],
+    placeholder="All states",
+)
+
+st.sidebar.divider()
 st.sidebar.caption("COVID-19 Intelligence Platform")
 st.sidebar.caption("Data: CDC + US Census")
 
@@ -166,10 +182,14 @@ elif page == "Metrics Deep Dive":
 
     if metric == "Case Fatality Rate by State":
         st.markdown("**Deaths / Confirmed Cases × 100** — highlights regional healthcare capacity differences.")
-        df_cfr = query("""
+        # Validate state_fips values are numeric strings before interpolating into SQL
+        safe_states = [s for s in selected_states if str(s).isdigit()]
+        state_filter_cfr = f"AND state_fips IN ({','.join(repr(s) for s in safe_states)})" if safe_states else ""
+        df_cfr = query(f"""
             SELECT state_fips, case_month, case_fatality_rate_pct
             FROM COVID_DB.MARTS.MART_CASE_FATALITY_RATE
             WHERE case_fatality_rate_pct BETWEEN 0 AND 20
+            {state_filter_cfr}
             ORDER BY case_month
         """)
         if not df_cfr.empty:
@@ -181,7 +201,7 @@ elif page == "Metrics Deep Dive":
                 title="Case Fatality Rate (%) Over Time by State",
                 labels={"CASE_FATALITY_RATE_PCT": "CFR %", "CASE_MONTH": "Month"},
             )
-            fig.update_layout(showlegend=False)
+            fig.update_layout(showlegend=len(selected_states) > 0)
             st.plotly_chart(fig, width="stretch")
 
     elif metric == "Cases per 100k — Top Counties":
@@ -232,12 +252,15 @@ elif page == "Metrics Deep Dive":
             "**Custom metric** — hospitalizations / confirmed cases × 100, by state and month. "
             "Signals healthcare system burden independently of fatality rate. "
             "A high hospitalization rate with a low CFR indicates strong ICU care; "
-            "high in both signals a overwhelmed system."
+            "high in both signals an overwhelmed system."
         )
-        df_hosp = query("""
+        safe_states = [s for s in selected_states if str(s).isdigit()]
+        state_filter_hosp = f"AND state_fips IN ({','.join(repr(s) for s in safe_states)})" if safe_states else ""
+        df_hosp = query(f"""
             SELECT state_fips, case_month, hospitalization_rate_pct, total_cases
             FROM COVID_DB.MARTS.MART_HOSPITALIZATION_RATE
             WHERE hospitalization_rate_pct BETWEEN 0 AND 100
+            {state_filter_hosp}
             ORDER BY case_month
         """)
         if not df_hosp.empty:
@@ -252,7 +275,7 @@ elif page == "Metrics Deep Dive":
                     "CASE_MONTH": "Month",
                 },
             )
-            fig.update_layout(showlegend=False)
+            fig.update_layout(showlegend=len(selected_states) > 0)
             st.plotly_chart(fig, width="stretch")
 
     elif metric == "Severity Index — Top Counties ★":
@@ -266,7 +289,7 @@ elif page == "Metrics Deep Dive":
             SELECT county_fips, county_name, state_fips,
                    severity_index, hosp_rate_pct, icu_rate_pct, cfr_pct, total_cases
             FROM COVID_DB.MARTS.MART_SEVERITY_INDEX
-            WHERE total_cases >= 10
+            WHERE severity_index > 0
             ORDER BY severity_index DESC
             LIMIT 30
         """)

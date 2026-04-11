@@ -7,7 +7,13 @@ Usage: uv run python main.py
 import subprocess
 import sys
 from pathlib import Path
+
 from loguru import logger
+
+from src.config import census, snowflake
+from src.ingest_covid_cases import ingest as ingest_cases
+from src.ingest_vaccinations import ingest as ingest_vaccinations
+from src.ingest_population import ingest as ingest_population
 
 ROOT_DIR = Path(__file__).parent
 DBT_DIR = ROOT_DIR / "covid_19"
@@ -15,7 +21,6 @@ DBT_DIR = ROOT_DIR / "covid_19"
 
 def _check_prerequisites() -> None:
     """Fail fast if required environment variables are missing."""
-    from src.config import census, snowflake
     if not (census.api_key or "").strip():
         logger.error("CENSUS_API_KEY is not set — cannot retrieve population data.")
         sys.exit(1)
@@ -29,10 +34,6 @@ def run_ingestion() -> dict:
     logger.info("=" * 50)
     logger.info("STEP 1 — Data Ingestion")
     logger.info("=" * 50)
-
-    from src.ingest_covid_cases import ingest as ingest_cases
-    from src.ingest_vaccinations import ingest as ingest_vaccinations
-    from src.ingest_population import ingest as ingest_population
 
     results = {}
 
@@ -64,12 +65,12 @@ def run_transformations() -> bool:
 
     # Tests run after each layer — catches issues earlier in the pipeline
     steps = [
-        ("run --select staging",       "Staging models"),
-        ("test --select staging+",     "Staging tests"),
-        ("run --select intermediate",  "Intermediate models"),
-        ("test --select intermediate+","Intermediate tests"),
-        ("run --select marts",         "Mart models"),
-        ("test --select marts+",       "Mart tests"),
+        ("run --select staging",        "Staging models"),
+        ("test --select staging+",      "Staging tests"),
+        ("run --select intermediate",   "Intermediate models"),
+        ("test --select intermediate+", "Intermediate tests"),
+        ("run --select marts",          "Mart models"),
+        ("test --select marts+",        "Mart tests"),
     ]
 
     for command, label in steps:
@@ -81,14 +82,7 @@ def run_transformations() -> bool:
     return True
 
 
-def run_tests() -> bool:
-    logger.info("=" * 50)
-    logger.info("STEP 3 — Full dbt Test Suite")
-    logger.info("=" * 50)
-    return run_dbt("test")
-
-
-def print_summary(ingestion_results: dict, dbt_success: bool, tests_success: bool) -> None:
+def print_summary(ingestion_results: dict, dbt_success: bool) -> None:
     logger.info("=" * 50)
     logger.info("PIPELINE SUMMARY")
     logger.info("=" * 50)
@@ -96,7 +90,6 @@ def print_summary(ingestion_results: dict, dbt_success: bool, tests_success: boo
     logger.info(f"  Vaccinations loaded:     {ingestion_results.get('vaccinations', 0):,} rows")
     logger.info(f"  Population loaded:       {ingestion_results.get('population', 0):,} rows")
     logger.info(f"  dbt transformations:     {'PASS' if dbt_success else 'FAIL'}")
-    logger.info(f"  dbt tests:               {'PASS' if tests_success else 'WARN/FAIL'}")
     logger.info("=" * 50)
 
     if dbt_success:
@@ -112,13 +105,10 @@ def main():
     ingestion_results = run_ingestion()
     dbt_success = run_transformations()
 
-    if not dbt_success:
-        logger.error("dbt transformations failed — skipping tests")
-        print_summary(ingestion_results, dbt_success=False, tests_success=False)
-        sys.exit(1)
+    print_summary(ingestion_results, dbt_success)
 
-    tests_success = run_tests()
-    print_summary(ingestion_results, dbt_success=True, tests_success=tests_success)
+    if not dbt_success:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

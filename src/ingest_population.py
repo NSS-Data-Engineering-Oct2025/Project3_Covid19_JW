@@ -6,10 +6,11 @@ Target:   RAW.RAW_POPULATION
 Requires CENSUS_API_KEY in .env  (free at https://api.census.gov/data/key_signup.html)
 """
 
+import time
 import requests
 import pandas as pd
 from loguru import logger
-from src.config import census
+from src.config import census, cdc
 from src.load_to_snowflake import load_dataframe
 
 TARGET_TABLE = "RAW_POPULATION"
@@ -25,19 +26,22 @@ def fetch_population() -> pd.DataFrame:
         "for": GEOGRAPHY,
         "key": census.api_key,
     }
-    resp = requests.get(census.endpoint, params=params, timeout=60)
-    resp.raise_for_status()
-
-    data = resp.json()
-    headers = [h.upper() for h in data[0]]
-    rows = data[1:]
-    df = pd.DataFrame(rows, columns=headers)
-
-    # Create a 5-digit FIPS code (state 2-digit + county 3-digit)
-    df["FIPS"] = df["STATE"].str.zfill(2) + df["COUNTY"].str.zfill(3)
-    df["POP"] = pd.to_numeric(df["POP"], errors="coerce")
-
-    return df
+    for attempt in range(1, cdc.max_retries + 1):
+        try:
+            resp = requests.get(census.endpoint, params=params, timeout=60)
+            resp.raise_for_status()
+            data = resp.json()
+            headers = [h.upper() for h in data[0]]
+            rows = data[1:]
+            df = pd.DataFrame(rows, columns=headers)
+            df["FIPS"] = df["STATE"].str.zfill(2) + df["COUNTY"].str.zfill(3)
+            df["POP"] = pd.to_numeric(df["POP"], errors="coerce")
+            return df
+        except requests.RequestException as exc:
+            logger.warning(f"Census API attempt {attempt}/{cdc.max_retries} failed: {exc}")
+            if attempt < cdc.max_retries:
+                time.sleep(cdc.backoff_seconds ** attempt)
+    raise RuntimeError(f"All {cdc.max_retries} attempts failed for Census API")
 
 
 def ingest() -> int:

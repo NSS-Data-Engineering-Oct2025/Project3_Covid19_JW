@@ -32,13 +32,17 @@ with DAG(
 
     # ── Ingestion tasks ──────────────────────────────────────────────────────
 
+    import os
+    DEMO_MODE = os.environ.get("AIRFLOW_DEMO_MODE", "false").lower() == "true"
+    MAX_PAGES = 2 if DEMO_MODE else None  # 2 pages (~100k rows) for demo, full load otherwise
+
     def run_ingest_cases():
         from src.ingest_covid_cases import ingest
-        ingest()
+        ingest(max_pages=MAX_PAGES)
 
     def run_ingest_vaccinations():
         from src.ingest_vaccinations import ingest
-        ingest()
+        ingest(max_pages=MAX_PAGES)
 
     def run_ingest_population():
         from src.ingest_population import ingest

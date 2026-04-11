@@ -1,0 +1,8 @@
+apache-airflow-providers-snowflake
+snowflake-connector-python>=3.10
+pandas>=2.2
+requests>=2.32
+httpx>=0.27
+python-dotenv>=1.0
+loguru>=0.7
+dbt-snowflake>=1.8

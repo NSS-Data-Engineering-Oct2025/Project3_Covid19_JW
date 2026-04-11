@@ -7,9 +7,10 @@ with cases as (
         county_fips,
         state_fips,
         case_month,
-        count(*)        as total_cases,
-        sum(is_death)   as total_deaths,
-        sum(is_hospitalized) as total_hospitalizations
+        count(*)             as total_cases,
+        sum(is_death)        as total_deaths,
+        sum(is_hospitalized) as total_hospitalizations,
+        sum(is_icu)          as total_icu
     from {{ ref('stg_covid_cases') }}
     group by 1, 2, 3
 ),
@@ -30,6 +31,7 @@ joined as (
         c.total_cases,
         c.total_deaths,
         c.total_hospitalizations,
+        c.total_icu,
         p.county_name,
         p.population
     from cases c
