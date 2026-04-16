@@ -40,7 +40,7 @@ Copy-Item .env.example .env
 
 ### 3. Configure dbt
 ```powershell
-Copy-Item dbt_project\profiles.yml.example $HOME\.dbt\profiles.yml
+Copy-Item covid_19\profiles.yml.example $HOME\.dbt\profiles.yml
 # Edit ~/.dbt/profiles.yml and set SNOWFLAKE_PASSWORD
 ```
 
@@ -63,15 +63,16 @@ uv run python -m src.ingest_population
 
 ### 6. Run dbt
 ```powershell
-cd dbt_project
-dbt debug          # verify connection
-dbt run            # build all models
-dbt test           # run all tests
+cd covid_19
+uv run dbt deps     # install dbt_utils
+uv run dbt debug    # verify connection
+uv run dbt run      # build all models
+uv run dbt test     # run all tests
 ```
 
 ### 7. Launch dashboard
 ```powershell
-streamlit run streamlit/app.py
+uv run streamlit run streamlit/app.py
 ```
 
 ---
@@ -88,14 +89,15 @@ streamlit run streamlit/app.py
 
 ## Metrics
 
-| Metric | dbt Model |
-|--------|-----------|
-| 3-month rolling avg of new cases | `mart_rolling_avg_cases` |
-| Case fatality rate by state | `mart_case_fatality_rate` |
-| Cases per 100k population | `mart_cases_per_100k` |
-| Vaccination coverage vs case rate | `mart_vaccination_vs_cases` |
-| Data freshness by source | `mart_data_freshness` |
-| Booster adoption rate (custom) | `mart_vaccination_vs_cases` |
+| Metric | dbt Model | Type |
+|--------|-----------|------|
+| 3-month rolling avg of new cases | `mart_rolling_avg_cases` | Built-in |
+| Case fatality rate by state | `mart_case_fatality_rate` | Built-in |
+| Cases per 100k population | `mart_cases_per_100k` | Built-in |
+| Vaccination coverage vs case rate | `mart_vaccination_vs_cases` | Built-in |
+| Data freshness by source | `mart_data_freshness` | Built-in |
+| Hospitalization rate by state | `mart_hospitalization_rate` | Custom |
+| Severity index by county | `mart_severity_index` | Custom |
 
 ---
 
@@ -104,10 +106,18 @@ streamlit run streamlit/app.py
 ```
 ├── dags/                   Airflow DAG
 ├── src/                    Python ingestion scripts
-├── dbt_project/            dbt project (models, macros, tests)
+│   ├── config.py           Centralized configuration (@dataclass)
+│   ├── soda_ingestor.py    Shared CDC pagination & retry logic
+│   ├── load_to_snowflake.py Snowflake loader
+│   ├── ingest_covid_cases.py
+│   ├── ingest_vaccinations.py
+│   └── ingest_population.py
+├── covid_19/               dbt project
 │   ├── models/staging/
 │   ├── models/intermediate/
-│   └── models/marts/
+│   ├── models/marts/
+│   ├── macros/
+│   └── tests/              Custom data quality tests
 ├── streamlit/              Streamlit dashboard
 ├── .env.example            Environment variables template
 ├── pyproject.toml          Python dependencies (uv)

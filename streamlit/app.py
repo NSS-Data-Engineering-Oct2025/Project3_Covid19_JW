@@ -4,12 +4,13 @@ Connects directly to Snowflake MARTS schema.
 Run with: uv run streamlit run streamlit/app.py
 """
 
-import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import snowflake.connector
 from dotenv import load_dotenv
+
+from src.config import snowflake as sf_config
 
 load_dotenv()
 
@@ -24,21 +25,22 @@ st.set_page_config(
 @st.cache_resource
 def get_connection():
     return snowflake.connector.connect(
-        account=os.environ["SNOWFLAKE_ACCOUNT"],
-        user=os.environ["SNOWFLAKE_USER"],
-        password=os.environ["SNOWFLAKE_PASSWORD"],
-        warehouse=os.environ.get("SNOWFLAKE_WAREHOUSE", "COMPUTE_WH"),
-        database=os.environ.get("SNOWFLAKE_DATABASE", "COVID_DB"),
-        role=os.environ.get("SNOWFLAKE_ROLE", "ACCOUNTADMIN"),
+        account=sf_config.account,
+        user=sf_config.user,
+        password=sf_config.password,
+        warehouse=sf_config.warehouse,
+        database=sf_config.database,
+        role=sf_config.role,
+        client_session_keep_alive=True,
     )
 
 
 @st.cache_data(ttl=3600)
 def query(sql: str) -> pd.DataFrame:
     conn = get_connection()
-    cur = conn.cursor()
-    cur.execute(sql)
-    return cur.fetch_pandas_all()
+    with conn.cursor() as cur:
+        cur.execute(sql)
+        return cur.fetch_pandas_all()
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────

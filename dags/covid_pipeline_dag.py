@@ -9,9 +9,9 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
-# Path where dbt project lives — adjust if you move the repo
-DBT_PROJECT_DIR = "/path/to/Project3_Covid19_JW/covid_19"
-DBT_PROFILES_DIR = "~/.dbt"
+# Adjust these paths for your deployment environment
+DBT_PROJECT_DIR = "/opt/airflow/dags/covid_19"
+DBT_PROFILES_DIR = "/opt/airflow/.dbt"
 
 default_args = {
     "owner": "wilmer",

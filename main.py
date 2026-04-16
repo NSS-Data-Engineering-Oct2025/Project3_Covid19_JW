@@ -53,7 +53,6 @@ def run_dbt(command: str) -> bool:
     result = subprocess.run(
         ["uv", "run", "dbt", *command.split()],
         cwd=DBT_DIR,
-        capture_output=False,
     )
     return result.returncode == 0
 
