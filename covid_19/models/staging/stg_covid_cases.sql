@@ -3,7 +3,23 @@
 -- Column names mapped from actual RAW_COVID_CASES schema (verified 2026-03-31).
 
 with source as (
-    select * from {{ source('raw', 'raw_covid_cases') }}
+    select
+        case_month,
+        state_fips_code,
+        county_fips_code,
+        res_state,
+        res_county,
+        age_group,
+        sex,
+        race,
+        ethnicity,
+        current_status,
+        symptom_status,
+        hosp_yn,
+        icu_yn,
+        death_yn,
+        underlying_conditions_yn
+    from {{ source('raw', 'raw_covid_cases') }}
 ),
 
 cleaned as (
@@ -45,4 +61,24 @@ cleaned as (
       and case_month is not null
 )
 
-select * from cleaned
+select
+    county_fips,
+    state_fips,
+    case_month,
+    res_state,
+    res_county,
+    age_group,
+    sex,
+    race,
+    ethnicity,
+    current_status,
+    symptom_status,
+    hosp_yn,
+    icu_yn,
+    death_yn,
+    underlying_conditions_yn,
+    is_death,
+    is_hospitalized,
+    is_icu,
+    _loaded_at
+from cleaned

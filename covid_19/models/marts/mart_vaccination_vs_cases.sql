@@ -13,7 +13,14 @@ with cases_cumulative as (
 ),
 
 vaccinations as (
-    select * from {{ ref('int_vaccinations_with_population') }}
+    select
+        county_fips,
+        state_abbrev,
+        county_name,
+        latest_vaccination_date,
+        pct_series_complete,
+        pct_boosted
+    from {{ ref('int_vaccinations_with_population') }}
 )
 
 select

@@ -22,7 +22,17 @@ with vaccinations as (
 ),
 
 latest as (
-    select * from vaccinations where rn = 1
+    select
+        county_fips,
+        state_abbrev,
+        county_name,
+        vaccination_date,
+        dose1_cumulative,
+        series_complete_cumulative,
+        booster_cumulative,
+        census2019_pop
+    from vaccinations
+    where rn = 1
 ),
 
 population as (
@@ -56,4 +66,15 @@ joined as (
     left join population p on v.county_fips = p.county_fips
 )
 
-select * from joined
+select
+    county_fips,
+    state_abbrev,
+    county_name,
+    latest_vaccination_date,
+    dose1_cumulative,
+    series_complete_cumulative,
+    booster_cumulative,
+    population,
+    pct_series_complete,
+    pct_boosted
+from joined

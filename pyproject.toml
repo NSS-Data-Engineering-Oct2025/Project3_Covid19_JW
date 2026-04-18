@@ -14,10 +14,8 @@ dependencies = [
     "plotly>=5.22",
 ]
 
-[tool.uv]
-dev-dependencies = [
-    "ruff>=0.4",
-]
+[dependency-groups]
+dev = ["ruff>=0.4"]
 
 [tool.ruff]
 line-length = 100

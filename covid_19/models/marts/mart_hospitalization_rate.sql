@@ -30,5 +30,12 @@ with_rate as (
     from base
 )
 
-select * from with_rate
+select
+    state_fips,
+    case_month,
+    total_cases,
+    total_hospitalizations,
+    total_deaths,
+    hospitalization_rate_pct
+from with_rate
 order by state_fips, case_month

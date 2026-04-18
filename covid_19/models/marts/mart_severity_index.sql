@@ -49,5 +49,17 @@ with_index as (
     from with_rates
 )
 
-select * from with_index
+select
+    county_fips,
+    state_fips,
+    county_name,
+    total_cases,
+    total_hospitalizations,
+    total_icu_cases,
+    total_deaths,
+    hosp_rate_pct,
+    icu_rate_pct,
+    cfr_pct,
+    severity_index
+from with_index
 order by severity_index desc

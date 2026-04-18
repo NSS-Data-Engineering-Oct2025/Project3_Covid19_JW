@@ -2,7 +2,13 @@
 -- Static dataset — one row per county.
 
 with source as (
-    select * from {{ source('raw', 'raw_population') }}
+    select
+        fips,
+        state,
+        county,
+        name,
+        pop
+    from {{ source('raw', 'raw_population') }}
 ),
 
 cleaned as (
@@ -20,4 +26,11 @@ cleaned as (
       and pop is not null
 )
 
-select * from cleaned
+select
+    county_fips,
+    state_fips,
+    county_code,
+    county_name,
+    population,
+    _loaded_at
+from cleaned

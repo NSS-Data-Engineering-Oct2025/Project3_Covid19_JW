@@ -24,5 +24,10 @@ rolling as (
     from monthly
 )
 
-select * from rolling
+select
+    state_fips,
+    case_month,
+    monthly_cases,
+    rolling_3mo_avg_cases
+from rolling
 order by state_fips, case_month

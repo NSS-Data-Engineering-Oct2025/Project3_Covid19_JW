@@ -2,7 +2,16 @@
 -- Light cleaning only — cast types, normalize FIPS, drop junk rows.
 
 with source as (
-    select * from {{ source('raw', 'raw_vaccinations') }}
+    select
+        fips,
+        recip_county,
+        recip_state,
+        date,
+        administered_dose1_recip,
+        series_complete_yes,
+        booster_doses,
+        census2019
+    from {{ source('raw', 'raw_vaccinations') }}
 ),
 
 cleaned as (
@@ -25,4 +34,14 @@ cleaned as (
       and date is not null
 )
 
-select * from cleaned
+select
+    county_fips,
+    county_name,
+    state_abbrev,
+    vaccination_date,
+    dose1_cumulative,
+    series_complete_cumulative,
+    booster_cumulative,
+    census2019_pop,
+    _loaded_at
+from cleaned

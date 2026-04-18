@@ -43,6 +43,14 @@ def query(sql: str) -> pd.DataFrame:
         return cur.fetch_pandas_all()
 
 
+def build_state_filter(selected: list, column: str = "state_fips") -> str:
+    """Build a SQL AND clause for state filtering with input validation."""
+    safe = [s for s in selected if str(s).isdigit()]
+    if not safe:
+        return ""
+    return f"AND {column} IN ({','.join(repr(s) for s in safe)})"
+
+
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 
 st.sidebar.title("Navigation")
@@ -184,14 +192,12 @@ elif page == "Metrics Deep Dive":
 
     if metric == "Case Fatality Rate by State":
         st.markdown("**Deaths / Confirmed Cases × 100** — highlights regional healthcare capacity differences.")
-        # Validate state_fips values are numeric strings before interpolating into SQL
-        safe_states = [s for s in selected_states if str(s).isdigit()]
-        state_filter_cfr = f"AND state_fips IN ({','.join(repr(s) for s in safe_states)})" if safe_states else ""
+        state_filter = build_state_filter(selected_states)
         df_cfr = query(f"""
             SELECT state_fips, case_month, case_fatality_rate_pct
             FROM COVID_DB.MARTS.MART_CASE_FATALITY_RATE
             WHERE case_fatality_rate_pct BETWEEN 0 AND 20
-            {state_filter_cfr}
+            {state_filter}
             ORDER BY case_month
         """)
         if not df_cfr.empty:
@@ -256,13 +262,12 @@ elif page == "Metrics Deep Dive":
             "A high hospitalization rate with a low CFR indicates strong ICU care; "
             "high in both signals an overwhelmed system."
         )
-        safe_states = [s for s in selected_states if str(s).isdigit()]
-        state_filter_hosp = f"AND state_fips IN ({','.join(repr(s) for s in safe_states)})" if safe_states else ""
+        state_filter = build_state_filter(selected_states)
         df_hosp = query(f"""
             SELECT state_fips, case_month, hospitalization_rate_pct, total_cases
             FROM COVID_DB.MARTS.MART_HOSPITALIZATION_RATE
             WHERE hospitalization_rate_pct BETWEEN 0 AND 100
-            {state_filter_hosp}
+            {state_filter}
             ORDER BY case_month
         """)
         if not df_hosp.empty:

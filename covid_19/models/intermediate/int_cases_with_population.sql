@@ -39,4 +39,14 @@ joined as (
         on c.county_fips = p.county_fips
 )
 
-select * from joined
+select
+    c.county_fips,
+    c.state_fips,
+    c.case_month,
+    c.total_cases,
+    c.total_deaths,
+    c.total_hospitalizations,
+    c.total_icu,
+    p.county_name,
+    p.population
+from joined
