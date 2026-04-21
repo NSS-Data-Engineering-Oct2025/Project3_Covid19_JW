@@ -59,7 +59,7 @@ def paginate_and_load(
     offset = 0
     page = 0
 
-    while True:
+    while True:  #while true is an antipattern, should have an exit condition
         if max_pages is not None and page >= max_pages:
             logger.info(f"Reached max_pages={max_pages}, stopping early")
             break
